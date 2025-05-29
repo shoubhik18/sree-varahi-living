@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 body {
     font-family: "Roboto", serif;
-    background-color: #F6F4EF;
+    background-color: #000000;
 }
 
 .home {
@@ -188,13 +188,13 @@ body {
 /* About Section Styles */
 .about-section {
     padding: 100px 120px;
-    background-color: #F6F4EF;
+    background-color: #000000;
     text-align: center;
 }
 
 .about-title {
     font-size: 48px;
-    color: #1A1A1A;
+    color: #FFFFFF;
     font-weight: 500;
     margin-bottom: 40px;
     line-height: 1.2;
@@ -209,7 +209,7 @@ body {
     font-size: 18px;
     margin: 10px 0px;
     line-height: 1.6;
-    color: #333;
+    color: #FFFFFF;
     margin-bottom: 44px;
 }
 
@@ -241,7 +241,7 @@ body {
 /* Why Choose Us Section Styles */
 .why-choose-section {
     padding: 100px 120px;
-    background-color: #F6F4EF; /* Changed to match body background */
+    background-color: #000000;
     text-align: center;
 }
 
@@ -251,7 +251,7 @@ body {
 
 .section-header h2 {
     font-size: 42px;
-    color: #1A1A1A;
+    color: #FFFFFF;
     font-weight: 600;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -282,13 +282,13 @@ body {
 
 .feature-box {
     flex: 0 0 calc(33.33% - 20px);
-    padding: 0; /* Remove padding */
-    background-color: white;
+    padding: 0;
+    background-color: #1A1A1A;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.05);
     transition: transform 0.3s ease;
     text-align: center;
-    overflow: hidden; /* Ensure image stays within borders */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -298,18 +298,18 @@ body {
 }
 
 .feature-box img {
-    width: 100%; /* Make image fill the width */
+    width: 100%;
     height: auto;
     object-fit: cover;
-    margin-bottom: 0; /* Remove margin */
+    margin-bottom: 0;
 }
 
 .feature-box p {
     font-size: 16px;
     line-height: 1.6;
-    color: #555;
-    padding: 20px; /* Add padding to text only */
-    flex-grow: 1; /* Allow text area to grow */
+    color: #FFFFFF;
+    padding: 20px;
+    flex-grow: 1;
 }
 
 /* Media Queries */
@@ -445,7 +445,7 @@ body {
 /* Featured Property Section */
 .featured-property-section {
     padding: 100px 120px;
-    background-color: #F6F4EF;
+    background-color: #000000;
     text-align: center;
     position: relative;
 }
@@ -460,10 +460,10 @@ body {
 
 .property-card {
     flex: 0 0 calc(33.33% - 20px);
-    background-color: white;
+    background-color: #1A1A1A;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.05);
     transition: transform 0.3s ease;
 }
 
@@ -488,11 +488,10 @@ body {
     text-align: left;
 }
 
-
 .property-details h3 {
     font-size: 18px;
-    margin-bottom: 20px; /* Increased from 10px since we removed elements */
-    color: #1A1A1A;
+    margin-bottom: 20px;
+    color: #FFFFFF;
     line-height: 1.4;
 }
 
@@ -505,7 +504,7 @@ body {
 .property-price {
     font-size: 18px;
     font-weight: 700;
-    color: #1A1A1A;
+    color: #FFFFFF;
 }
 
 .book-now-btn {
@@ -556,7 +555,7 @@ body {
 /* Our Project Section */
 .our-project-section {
     padding: 100px 120px;
-    background-color: #F6F4EF;
+    background-color: #000000;
     text-align: center;
     position: relative;
 }
@@ -617,10 +616,10 @@ body {
 
 .project-card {
     flex: 0 0 calc(33.33% - 20px);
-    background-color: white;
+    background-color: #1A1A1A;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.05);
     transition: transform 0.3s ease;
 }
 
@@ -647,12 +646,12 @@ body {
 .project-details h3 {
     font-size: 18px;
     margin-bottom: 15px;
-    color: #1A1A1A;
+    color: #FFFFFF;
     font-weight: 600;
 }
 
 .project-description {
-    color: #555;
+    color: #FFFFFF;
     font-size: 14px;
     line-height: 1.6;
 }
@@ -694,7 +693,7 @@ body {
 /* Testimonials Section */
 .testimonials-section {
     padding: 100px 120px;
-    background-color: #F6F4EF; /* Same as body background */
+    background-color: #000000;
     text-align: center;
     position: relative;
 }
@@ -714,14 +713,14 @@ body {
 
 .testimonial-card {
     flex: 0 0 calc(33.33% - 20px);
-    background-color: white;
+    background-color: #1A1A1A;
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.05);
     text-align: left;
     display: flex;
     flex-direction: column;
-    min-height: 350px; /* Set a minimum height for consistency */
+    min-height: 350px;
 }
 
 .testimonial-header {
@@ -751,25 +750,25 @@ body {
 .testimonial-header h3 {
     font-size: 18px;
     font-weight: 600;
-    color: #1A1A1A;
+    color: #FFFFFF;
     margin: 0;
 }
 
 .testimonial-text {
-    color: #555;
+    color: #FFFFFF;
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
-    flex-grow: 1; /* Allow text to expand */
+    flex-grow: 1;
 }
 
 .testimonial-footer {
-    margin-top: auto; /* Push to bottom */
+    margin-top: auto;
 }
 
 .customer-name {
     font-weight: 700;
-    color: #1A1A1A;
+    color: #FFFFFF;
     font-size: 16px;
     margin-bottom: 5px;
 }
@@ -838,20 +837,18 @@ body {
 /* Book Visit Section */
 .book-visit-section {
     padding: 100px 120px;
-    /* background-color: #F6F4EF; */
 }
 
 .book-visit-container {
     max-width: 1200px;
     margin: 0 auto;
-    /* background-color: #F6F4EF; */
     border-radius: 10px;
     overflow: hidden;
 }
 
 .book-visit-title {
     font-size: 36px;
-    color: #1A1A1A;
+    color: #FFFFFF;
     font-weight: 500;
     margin-bottom: 40px;
     text-align: center;
@@ -859,10 +856,9 @@ body {
 
 .book-visit-content {
     display: flex;
-    background-color: #F6F4EF;
+    background-color: #1A1A1A;
     border-radius: 10px;
     overflow: hidden;
-    /* box-shadow: 0 5px 15px rgba(0,0,0,0.05); */
 }
 
 .villa-image {
@@ -882,12 +878,12 @@ body {
 .book-visit-form {
     flex: 1;
     padding: 40px;
-    background-color: #F6F4EF;
+    background-color: #1A1A1A;
 }
 
 .book-visit-form h3 {
     font-size: 18px;
-    color: #1A1A1A;
+    color: #FFFFFF;
     margin-bottom: 30px;
     font-weight: 500;
 }
@@ -899,18 +895,18 @@ body {
 .form-group label {
     display: block;
     font-size: 14px;
-    color: #1A1A1A;
+    color: #FFFFFF;
     margin-bottom: 8px;
 }
 
 .form-group input {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #333;
     border-radius: 5px;
     font-size: 16px;
-    color: #333;
-    background-color: white;
+    color: #FFFFFF;
+    background-color: #000000;
 }
 
 .form-group input::placeholder {
@@ -969,8 +965,6 @@ body {
         padding: 30px 20px;
     }
 }
-
-
 
 /* Footer Styles - Completely revised */
 .main-footer {
