@@ -13,14 +13,19 @@
   <body>
     <div class="home">
       <video autoplay muted loop playsinline class="background-video">
-        <source src="./assets/home.mp4" type="video/mp4">
+        <source src="./assets/home.mp4" type="video/mp4" />
       </video>
       <div class="video-overlay"></div>
       <header>
         <nav class="navbar">
           <div class="nav-container">
             <div class="logo">
-              <img height="100px" width="100px" src="./assets/Logo.jpeg" alt="NEXFINR Logo" />
+              <img
+                height="100px"
+                width="100px"
+                src="./assets/Logo.jpeg"
+                alt="NEXFINR Logo"
+              />
             </div>
             <div class="nav-right">
               <div class="nav-links">
@@ -36,11 +41,11 @@
                     <a href="./portfolio-management/plan-c.html">Plan C</a>
                   </div>
                 </div>
-                <a href="./propertManagement.html">Products</a>
-                <a href="#find-a-property">Find A Property</a>
-                <a href="#projects">Projects</a>
+                <a href="./propertManagement.html">Services</a>
+                <!-- <a href="#find-a-property">Find A Property</a> -->
+                <a href="./about-us.html">About Us</a>
               </div>
-              <button class="contact-btn">CONTACT US</button>
+              <button class="contact-btn" id="contactBtn">CONTACT US</button>
             </div>
             <button class="hamburger">
               <span class="bar"></span>
@@ -54,55 +59,53 @@
       <main class="hero">
         <div class="hero-content">
           <h1>
-            NEXFINR
+            Welcome to <span>N</span>ew <span>E</span>xclusive
+            <span>X</span>perience
           </h1>
           <div class="divider"></div>
-          <p class="subtitle">Real Estate & Financial Solutions</p>
+          <p class="subtitle">In Finance & Real Estate Solutions</p>
+          <p class="subtitle">
+            Where Premium Real Estate Meets Smart Management
+          </p>
         </div>
-        <div class="scroll-down">
+        <!-- <div class="scroll-down">
           <span class="scroll-icon">↓</span>
-        </div>
+        </div> -->
       </main>
     </div>
 
     <section class="about-section">
       <h1 class="about-title">Welcome to NEXFINR</h1>
       <div class="about-content">
-        <p>
-          At NEXFINR, we are dedicated to providing comprehensive
-          property management services tailored to meet the diverse needs of our
-          clients across India. Our mission is to offer a seamless and
-          trustworthy experience, ensuring that both property owners and tenants
-          find optimal solutions without the usual complexities associated with
-          real estate transactions.
-        </p>
-        <h2>For Domestic Clients</h2>
-        <p>
-          We understand the challenges property owners face in managing their
-          assets. Our services encompass tenant acquisition, background
-          verification, and property maintenance, ensuring your property remains
-          in excellent condition and yields consistent returns. For tenants, we
-          offer a curated selection of properties available for rent or lease,
-          guiding you through every step to make the process straightforward and
-          stress-free.
-        </p>
-        <h2>For NRI Clients</h2>
-        <p>
-          Managing property from abroad can be daunting. At NEXFINR,
-          we specialize in NRI property management, acting as your reliable
-          local partner. Our services include property monitoring, tenant
-          management, legal compliance, and assistance with buying or selling
-          properties on your behalf. With our expertise, you can rest assured
-          that your investment is in capable hands, providing you peace of mind
-          no matter where you are in the world.
-          <br />
-          Choose NEXFINR for a transparent, efficient, and
-          client-focused property management experience.
-        </p>
+        <div class="about-left">
+          <div class="about-text">
+            <p>
+              At NEXFINR, we believe real estate should be more than
+              just transactions—it should be about seamless experiences, secure
+              investments, and lasting value. That's why we've reimagined how
+              property owners and tenants connect, creating a platform built on
+              trust, efficiency, and innovation.
+            </p>
+            <p>
+              Whether you're looking for reliable income from your high-value
+              property or searching for a luxurious, long-term living space, we
+              bring expert management, tailored solutions, and financial
+              insights.
+            </p>
+            <a href="./about-us.html" class="read-more-btn">Read More</a>
+          </div>
+        </div>
+        <div class="about-right">
+          <img
+            src="./assets/about_us.jpeg"
+            alt="NEXFINR Office"
+            class="about-image"
+          />
+        </div>
       </div>
     </section>
 
-    <section class="why-choose-section">
+    <!-- <section class="why-choose-section">
       <div class="floating-shapes-bg">
         <div class="floating-shape circle shape1"></div>
         <div class="floating-shape square shape2"></div>
@@ -120,36 +123,74 @@
       <div class="why-choose-container">
         <div class="why-choose-content">
           <ul class="feature-list">
-            <li><strong>Comprehensive Property Management</strong> - From marketing to maintenance, we handle it all. Our comprehensive approach ensures your property is managed efficiently and effectively.</li>
-            <li><strong>Strategic Rental Property Marketing</strong> - High-quality listings with professional photos and descriptions to attract the right tenants. We ensure maximum visibility for your property.</li>
-            <li><strong>Hassle-Free Rent Collection</strong> - Timely rent collection, monthly statements, and year-end reports for seamless financial tracking. We make property management stress-free.</li>
-            <li><strong>Proactive Property Maintenance</strong> - Routine upkeep and quick response to tenant requests, ensuring your property remains in top condition. We take care of everything.</li>
-            <li><strong>Legal Compliance & Eviction Services</strong> - Staying up-to-date with property laws and handling legal matters professionally when required. Your peace of mind is our priority.</li>
-            <li><strong>24/7 Emergency Response</strong> - A dedicated team available round-the-clock to address urgent property issues promptly. We're always here when you need us.</li>
+            <li>
+              <strong>Comprehensive Property Management</strong> - From
+              marketing to maintenance, we handle it all. Our comprehensive
+              approach ensures your property is managed efficiently and
+              effectively.
+            </li>
+            <li>
+              <strong>Strategic Rental Property Marketing</strong> -
+              High-quality listings with professional photos and descriptions to
+              attract the right tenants. We ensure maximum visibility for your
+              property.
+            </li>
+            <li>
+              <strong>Hassle-Free Rent Collection</strong> - Timely rent
+              collection, monthly statements, and year-end reports for seamless
+              financial tracking. We make property management stress-free.
+            </li>
+            <li>
+              <strong>Proactive Property Maintenance</strong> - Routine upkeep
+              and quick response to tenant requests, ensuring your property
+              remains in top condition. We take care of everything.
+            </li>
+            <li>
+              <strong>Legal Compliance & Eviction Services</strong> - Staying
+              up-to-date with property laws and handling legal matters
+              professionally when required. Your peace of mind is our priority.
+            </li>
+            <li>
+              <strong>24/7 Emergency Response</strong> - A dedicated team
+              available round-the-clock to address urgent property issues
+              promptly. We're always here when you need us.
+            </li>
           </ul>
         </div>
         <div class="feature-grid">
           <div class="grid-item">
-            <img src="./assets/comp.png" alt="Comprehensive Property Management" />
+            <img
+              src="./assets/comp.png"
+              alt="Comprehensive Property Management"
+            />
           </div>
           <div class="grid-item">
-            <img src="./assets/rent.png" alt="Strategic Rental Property Marketing" />
+            <img
+              src="./assets/rent.png"
+              alt="Strategic Rental Property Marketing"
+            />
           </div>
           <div class="grid-item">
             <img src="./assets/hastle.png" alt="Hassle-Free Rent Collection" />
           </div>
           <div class="grid-item">
-            <img src="./assets/proactive.png" alt="Proactive Property Maintenance" />
+            <img
+              src="./assets/proactive.png"
+              alt="Proactive Property Maintenance"
+            />
           </div>
           <div class="grid-item">
-            <img src="./assets/legal.png" alt="Legal Compliance & Eviction Services" />
+            <img
+              src="./assets/legal.png"
+              alt="Legal Compliance & Eviction Services"
+            />
           </div>
           <div class="grid-item">
             <img src="./assets/emer.png" alt="24/7 Emergency Response" />
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- End of Why Choose Us section -->
 
     <section class="subscriptions-section">
@@ -161,7 +202,7 @@
         <div class="subscription-box"></div>
         <div class="subscription-box"></div>
         <div class="subscription-box"></div>
-        <div class="subscription-box"></div>
+        <!-- <div class="subscription-box"></div> -->
       </div>
     </section>
 
@@ -181,7 +222,10 @@
       </div>
       <div class="achievements-row">
         <div class="achievement-box">
-          <img src="./assets/cusowner.webp" alt="1150+ Happy Customers as Owners" />
+          <img
+            src="./assets/cusowner.webp"
+            alt="1150+ Happy Customers as Owners"
+          />
         </div>
         <div class="achievement-box">
           <img src="./assets/happycus.webp" alt="900+ Happy Customers" />
@@ -578,37 +622,101 @@
       </div>
       <div class="book-visit-container">
         <h2 class="book-visit-title">Book My Property</h2>
-        
+
         <div class="book-visit-content">
           <div class="villa-image">
             <img src="./assets/villa.png" alt="Luxury Villa with Pool" />
           </div>
-          
+
           <div class="book-visit-form">
             <h3>Your details</h3>
-            
+
             <form id="visitForm">
               <div class="form-group">
                 <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Full Name"
+                  required
+                />
               </div>
-              
+
               <div class="form-group">
                 <label for="mobileNumber">Mobile Number</label>
-                <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number" required>
+                <input
+                  type="tel"
+                  id="mobileNumber"
+                  name="mobileNumber"
+                  placeholder="Mobile Number"
+                  required
+                />
               </div>
-              
+
               <div class="form-group">
                 <label for="emailAddress">Email Address</label>
-                <input type="email" id="emailAddress" name="emailAddress" placeholder="Email Address" required>
+                <input
+                  type="email"
+                  id="emailAddress"
+                  name="emailAddress"
+                  placeholder="Email Address"
+                  required
+                />
               </div>
-              
+
               <button type="submit" class="submit-btn">SUBMIT</button>
             </form>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="book-visit-form">
+                <h3>Contact Us</h3>
+                <form id="visitForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Full Name"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number</label>
+                        <input
+                            type="tel"
+                            id="mobileNumber"
+                            name="mobileNumber"
+                            placeholder="Mobile Number"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailAddress">Email Address</label>
+                        <input
+                            type="email"
+                            id="emailAddress"
+                            name="emailAddress"
+                            placeholder="Email Address"
+                            required
+                        />
+                    </div>
+
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer - Completely separate structure -->
     <footer class="main-footer">
@@ -619,11 +727,11 @@
           <a href="#">FIND A PROPERTY</a>
           <a href="#">PROJECTS</a>
         </div>
-        
+
         <div class="footer-logo">
           <img src="./assets/Logo.jpeg" alt="Logo" />
         </div>
-        
+
         <div class="footer-contact">
           <div class="contact-item">
             <a href="tel:+919121211888">+91-9121211888</a>
@@ -635,13 +743,17 @@
             <a href="/privacy-policy">PRIVACY POLICY</a>
           </div>
           <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-icon"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
             <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <div class="footer-info">
           <span>DTCP APPROVED</span>
@@ -742,7 +854,9 @@
       // Features Carousel functionality
       document.addEventListener("DOMContentLoaded", function () {
         const carousel = document.querySelector(".features-carousel");
-        const featureBoxes = Array.from(document.querySelectorAll(".feature-box"));
+        const featureBoxes = Array.from(
+          document.querySelectorAll(".feature-box")
+        );
         let clonesAdded = false;
         let isDragging = false;
         let startX, scrollLeft;
@@ -755,36 +869,40 @@
         function setupCarousel() {
           // Remove all clones if any
           if (clonesAdded) {
-            carousel.innerHTML = '';
-            featureBoxes.forEach(box => carousel.appendChild(box));
+            carousel.innerHTML = "";
+            featureBoxes.forEach((box) => carousel.appendChild(box));
             clonesAdded = false;
           }
           // On desktop, clone for infinite scroll and enable drag/animation
           if (!isMobile()) {
-            featureBoxes.forEach(box => {
+            featureBoxes.forEach((box) => {
               const clone = box.cloneNode(true);
-              clone.classList.add('cloned');
+              clone.classList.add("cloned");
               carousel.appendChild(clone);
             });
             clonesAdded = true;
-            carousel.style.animation = 'whychoose-scroll 18s linear infinite';
+            carousel.style.animation = "whychoose-scroll 18s linear infinite";
             // Drag-to-scroll for desktop
             carousel.onmousedown = (e) => {
               isDragging = true;
               startX = e.pageX - carousel.offsetLeft;
               scrollLeft = carousel.scrollLeft;
-              carousel.style.animationPlayState = 'paused';
-              carousel.classList.add('dragging');
+              carousel.style.animationPlayState = "paused";
+              carousel.classList.add("dragging");
             };
             carousel.onmouseleave = () => {
               isDragging = false;
-              carousel.classList.remove('dragging');
-              setTimeout(() => { carousel.style.animationPlayState = 'running'; }, 1500);
+              carousel.classList.remove("dragging");
+              setTimeout(() => {
+                carousel.style.animationPlayState = "running";
+              }, 1500);
             };
             carousel.onmouseup = () => {
               isDragging = false;
-              carousel.classList.remove('dragging');
-              setTimeout(() => { carousel.style.animationPlayState = 'running'; }, 1500);
+              carousel.classList.remove("dragging");
+              setTimeout(() => {
+                carousel.style.animationPlayState = "running";
+              }, 1500);
             };
             carousel.onmousemove = (e) => {
               if (!isDragging) return;
@@ -794,11 +912,15 @@
               carousel.scrollLeft = scrollLeft - walk;
             };
             // Pause on hover, resume on mouseleave
-            carousel.onmouseenter = () => { carousel.style.animationPlayState = 'paused'; };
-            carousel.onmouseleave = () => { carousel.style.animationPlayState = 'running'; };
+            carousel.onmouseenter = () => {
+              carousel.style.animationPlayState = "paused";
+            };
+            carousel.onmouseleave = () => {
+              carousel.style.animationPlayState = "running";
+            };
           } else {
             // On mobile/tablet, remove all drag/animation handlers for native scroll
-            carousel.style.animation = 'none';
+            carousel.style.animation = "none";
             carousel.onmousedown = null;
             carousel.onmouseleave = null;
             carousel.onmouseup = null;
@@ -809,86 +931,114 @@
         }
 
         setupCarousel();
-        window.addEventListener('resize', setupCarousel);
+        window.addEventListener("resize", setupCarousel);
       });
 
       // Dropdown functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const dropdownButton = document.querySelector('.dropdown-button');
-        const dropdownContent = document.querySelector('.dropdown-content');
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownButton = document.querySelector(".dropdown-button");
+        const dropdownContent = document.querySelector(".dropdown-content");
         let isDropdownOpen = false;
 
         // Toggle dropdown on button click
-        dropdownButton.addEventListener('click', function(e) {
+        dropdownButton.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
           isDropdownOpen = !isDropdownOpen;
-          this.classList.toggle('active');
-          dropdownContent.classList.toggle('show');
+          this.classList.toggle("active");
+          dropdownContent.classList.toggle("show");
         });
 
         // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
+        document.addEventListener("click", function (e) {
           if (!dropdownButton.contains(e.target) && isDropdownOpen) {
             isDropdownOpen = false;
-            dropdownButton.classList.remove('active');
-            dropdownContent.classList.remove('show');
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
           }
         });
 
         // Handle dropdown links
-        dropdownContent.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
+        dropdownContent.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
             isDropdownOpen = false;
-            dropdownButton.classList.remove('active');
-            dropdownContent.classList.remove('show');
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
           });
         });
 
         // Close dropdown when pressing Escape key
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && isDropdownOpen) {
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && isDropdownOpen) {
             isDropdownOpen = false;
-            dropdownButton.classList.remove('active');
-            dropdownContent.classList.remove('show');
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
           }
         });
       });
 
       // Hamburger menu functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.querySelector('.hamburger');
-        const navRight = document.querySelector('.nav-right');
-        const navLinks = document.querySelectorAll('.nav-links a');
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navRight = document.querySelector(".nav-right");
+        const navLinks = document.querySelectorAll(".nav-links a");
 
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener("click", function () {
           // Toggle hamburger animation
-          hamburger.classList.toggle('active');
+          hamburger.classList.toggle("active");
           // Toggle menu
-          navRight.classList.toggle('active');
+          navRight.classList.toggle("active");
           // Prevent body scroll when menu is open
-          document.body.style.overflow = navRight.classList.contains('active') ? 'hidden' : 'auto';
+          document.body.style.overflow = navRight.classList.contains("active")
+            ? "hidden"
+            : "auto";
         });
 
         // Close menu when clicking a link
-        navLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navRight.classList.remove('active');
-            document.body.style.overflow = 'auto';
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navRight.classList.remove("active");
+            document.body.style.overflow = "auto";
           });
         });
 
         // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-          if (!hamburger.contains(e.target) && 
-              !navRight.contains(e.target) && 
-              navRight.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navRight.classList.remove('active');
-            document.body.style.overflow = 'auto';
+        document.addEventListener("click", function (e) {
+          if (
+            !hamburger.contains(e.target) &&
+            !navRight.contains(e.target) &&
+            navRight.classList.contains("active")
+          ) {
+            hamburger.classList.remove("active");
+            navRight.classList.remove("active");
+            document.body.style.overflow = "auto";
           }
         });
+      });
+
+      // Modal functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('contactModal');
+        const btn = document.getElementById('contactBtn');
+        const span = document.getElementsByClassName('close-modal')[0];
+
+        btn.onclick = function() {
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        span.onclick = function() {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Restore scrolling
+          }
+        }
       });
     </script>
   </body>
