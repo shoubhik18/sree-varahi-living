@@ -498,6 +498,503 @@ body {
     }
 }
 
+/* Why Choose Us Section Styles */
+.why-choose-section {
+    padding: 100px 0;
+    background-color: #000000;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 42px;
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.yellow-underline {
+    width: 80px;
+    height: 3px;
+    background-color: #FFB800;
+    margin: 0 auto;
+}
+
+.why-choose-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    padding: 0 40px;
+    flex: 1;
+    align-items: stretch;
+    min-height: 420px;
+}
+
+.why-choose-content {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-list {
+    list-style-type: disc;
+    padding-left: 1.5em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    justify-content: center;
+}
+
+.feature-list li {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    list-style-position: outside;
+}
+
+.feature-list li strong {
+    font-weight: 700;
+    color: #fff;
+}
+
+.feature-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 18px;
+    align-items: stretch;
+    height: 100%;
+    min-height: 320px;
+    max-height: 420px;
+    aspect-ratio: 3/2;
+    justify-items: stretch;
+}
+
+.grid-item {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1A1A1A;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Media Queries for Why Choose Us Section */
+@media (max-width: 1200px) {
+    .why-choose-container {
+        padding: 0 20px;
+        gap: 30px;
+    }
+    .feature-grid {
+        min-height: 220px;
+        max-height: 320px;
+    }
+}
+
+@media (max-width: 992px) {
+    .why-choose-section {
+        min-height: auto;
+        padding: 60px 0;
+    }
+    .why-choose-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .feature-grid {
+        width: 100%;
+        min-height: 180px;
+        max-height: 260px;
+        aspect-ratio: 3/2;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose-section {
+        padding: 40px 0;
+    }
+    .section-header h2 {
+        font-size: 32px;
+    }
+    .why-choose-container {
+        padding: 0 10px;
+    }
+    .feature-list {
+        font-size: 0.95rem;
+        gap: 6px;
+    }
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        min-height: 120px;
+        max-height: 180px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        aspect-ratio: 2/3;
+        min-height: 100px;
+        max-height: 140px;
+    }
+}
+
+/* Premium Floating Geometric Shapes Background */
+.why-choose-section {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.floating-shapes-bg {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.floating-shape {
+    position: absolute;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+    animation: float-shape 12s ease-in-out infinite alternate;
+    transition: all 0.3s ease;
+}
+
+.floating-shape.circle {
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0.3));
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+}
+
+.floating-shape.square {
+    background: linear-gradient(135deg, rgba(30, 21, 80, 0.6), rgba(30, 21, 80, 0.2));
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(30, 21, 80, 0.15);
+}
+
+.floating-shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 45px solid rgba(255, 184, 0, 0.5);
+    background: none;
+    opacity: 0.2;
+    filter: drop-shadow(0 0 10px rgba(255, 184, 0, 0.2));
+}
+
+.floating-shape.diamond {
+    background: linear-gradient(135deg, rgba(176, 141, 87, 0.6), rgba(176, 141, 87, 0.2));
+    transform: rotate(45deg);
+    border-radius: 4px;
+    box-shadow: 0 0 18px rgba(176, 141, 87, 0.15);
+}
+
+/* Desktop positioning - premium layout */
+.floating-shape.shape1 {
+    width: 120px; 
+    height: 120px; 
+    left: 5%; 
+    top: 15%;
+    animation-delay: 0s;
+}
+
+.floating-shape.shape2 {
+    width: 80px; 
+    height: 80px; 
+    left: 78%; 
+    top: 25%;
+    animation-delay: 2s;
+}
+
+.floating-shape.shape3 {
+    width: 140px; 
+    height: 140px; 
+    left: 45%; 
+    top: 8%;
+    animation-delay: 1s;
+}
+
+.floating-shape.shape4 {
+    width: 90px; 
+    height: 90px; 
+    left: 82%; 
+    top: 65%;
+    animation-delay: 3s;
+}
+
+.floating-shape.shape5 {
+    width: 70px; 
+    height: 70px; 
+    left: 15%; 
+    top: 70%;
+    animation-delay: 1.5s;
+}
+
+.floating-shape.triangle.shape6 {
+    left: 65%; 
+    top: 35%;
+    animation-delay: 2.5s;
+}
+
+.floating-shape.diamond.shape7 {
+    width: 100px; 
+    height: 100px; 
+    left: 25%; 
+    top: 45%;
+    animation-delay: 0.5s;
+}
+
+@keyframes float-shape {
+    0% { 
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.35;
+    }
+    100% { 
+        transform: translateY(-30px) rotate(5deg) scale(1.05);
+        opacity: 0.15;
+    }
+}
+
+/* Tablet responsive design */
+@media (max-width: 1200px) {
+    .floating-shape {
+        opacity: 0.2;
+    }
+    
+    .floating-shape.shape1 {
+        width: 100px; 
+        height: 100px; 
+        left: 8%; 
+        top: 20%;
+    }
+    
+    .floating-shape.shape2 {
+        width: 70px; 
+        height: 70px; 
+        left: 75%; 
+        top: 30%;
+    }
+    
+    .floating-shape.shape3 {
+        width: 110px; 
+        height: 110px; 
+        left: 40%; 
+        top: 12%;
+    }
+    
+    .floating-shape.shape4 {
+        width: 75px; 
+        height: 75px; 
+        left: 80%; 
+        top: 70%;
+    }
+    
+    .floating-shape.shape5 {
+        width: 60px; 
+        height: 60px; 
+        left: 18%; 
+        top: 75%;
+    }
+    
+    .floating-shape.triangle.shape6 {
+        left: 62%; 
+        top: 40%;
+    }
+    
+    .floating-shape.diamond.shape7 {
+        width: 80px; 
+        height: 80px; 
+        left: 28%; 
+        top: 50%;
+    }
+    
+    .floating-shape.triangle {
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 35px solid rgba(255, 184, 0, 0.25);
+    }
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+    .floating-shapes-bg {
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .floating-shape {
+        opacity: 0.15;
+        animation-duration: 15s;
+    }
+    
+    .floating-shape.shape1 {
+        width: 60px; 
+        height: 60px; 
+        left: 10%; 
+        top: 10%;
+    }
+    
+    .floating-shape.shape2 {
+        width: 45px; 
+        height: 45px; 
+        left: 70%; 
+        top: 20%;
+    }
+    
+    .floating-shape.shape3 {
+        width: 75px; 
+        height: 75px; 
+        left: 35%; 
+        top: 5%;
+    }
+    
+    .floating-shape.shape4 {
+        width: 50px; 
+        height: 50px; 
+        left: 75%; 
+        top: 60%;
+    }
+    
+    .floating-shape.shape5 {
+        width: 40px; 
+        height: 40px; 
+        left: 20%; 
+        top: 65%;
+    }
+    
+    .floating-shape.triangle.shape6 {
+        left: 55%; 
+        top: 35%;
+    }
+    
+    .floating-shape.diamond.shape7 {
+        width: 55px; 
+        height: 55px; 
+        left: 30%; 
+        top: 45%;
+    }
+    
+    .floating-shape.triangle {
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 25px solid rgba(255, 184, 0, 0.2);
+    }
+}
+
+/* Very small mobile devices */
+@media (max-width: 480px) {
+    .floating-shape {
+        opacity: 0.12;
+        animation-duration: 18s;
+    }
+    
+    .floating-shape.shape1 {
+        width: 40px; 
+        height: 40px; 
+        left: 15%; 
+        top: 15%;
+    }
+    
+    .floating-shape.shape2 {
+        width: 35px; 
+        height: 35px; 
+        left: 65%; 
+        top: 25%;
+    }
+    
+    .floating-shape.shape3 {
+        width: 50px; 
+        height: 50px; 
+        left: 40%; 
+        top: 8%;
+    }
+    
+    .floating-shape.shape4 {
+        width: 38px; 
+        height: 38px; 
+        left: 70%; 
+        top: 65%;
+    }
+    
+    .floating-shape.shape5 {
+        width: 32px; 
+        height: 32px; 
+        left: 25%; 
+        top: 70%;
+    }
+    
+    .floating-shape.triangle.shape6 {
+        left: 50%; 
+        top: 40%;
+    }
+    
+    .floating-shape.diamond.shape7 {
+        width: 42px; 
+        height: 42px; 
+        left: 35%; 
+        top: 50%;
+    }
+    
+    .floating-shape.triangle {
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 20px solid rgba(255, 184, 0, 0.15);
+    }
+}
+
+/* Ensure section content is above the shapes */
+.why-choose-section > *:not(.floating-shapes-bg) {
+    position: relative;
+    z-index: 1;
+}
+
 /* Team Section Styles */
 .team-section {
     padding: 80px 0;
