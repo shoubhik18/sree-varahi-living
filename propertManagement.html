@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Property Management - Sree Varahi Living</title>
+    <title>Property Management - NEXFINR</title>
     <link rel="stylesheet" href="propertyManagement.css" />
     <script
       src="https://kit.fontawesome.com/376593105a.js"
@@ -15,18 +15,38 @@
       <nav class="navbar">
         <div class="nav-container">
           <div class="logo">
-            <img src="path-to-logo.png" alt="" />
+            <img
+              height="100px"
+              width="100px"
+              src="./assets/Logo.jpeg"
+              alt="NEXFINR Logo"
+            />
           </div>
           <div class="nav-right">
             <div class="nav-links">
               <a href="./index.html">Home</a>
-              <a href="./portfolio-management.html">Portfolio Management</a>
-              <a href="./products.html">Services</a>
+              <div class="dropdown-container">
+                <button class="dropdown-button">
+                  Portfolio Management
+                  <i class="fas fa-chevron-down arrow-icon"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="./portfolio-management/plan-a.html">Plan A</a>
+                  <a href="./portfolio-management/plan-b.html">Plan B</a>
+                  <a href="./portfolio-management/plan-c.html">Plan C</a>
+                </div>
+              </div>
+              <a href="./propertManagement.html">Services</a>
               <!-- <a href="#find-a-property">Find A Property</a> -->
               <a href="./about-us.html">About Us</a>
             </div>
-            <button class="contact-btn">CONTACT US</button>
+            <button class="contact-btn" id="contactBtn">CONTACT US</button>
           </div>
+          <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </nav>
     </header>
@@ -87,17 +107,11 @@
       <div class="rental-returns-container">
         <!-- Section header with title and description -->
         <div class="section-intro">
-          <h2>
-            Welcome to Sree Varahi Ventures – Your Trusted Property Management
-            Partner
-          </h2>
+          <h2>Maximize Returns. Minimize Hassles.</h2>
           <p>
-            At Sree Varahi Ventures, we provide end-to-end property management
-            solutions for both domestic and NRI clients, ensuring your real
-            estate investments are well-maintained, profitable, and hassle-free.
-            Whether you own a single property or a vast real estate portfolio,
-            we handle everything from tenant screening and rent collection to
-            legal compliance and property maintenance, so you don't have to.
+            Our property management services are tailored to deliver worry-free ownership. From marketing 
+            and tenant onboarding to maintenance and legal compliance, we ensure your property is not just 
+            managed—but enhanced.
           </p>
         </div>
 
@@ -108,29 +122,14 @@
           </div>
 
           <div class="row-content">
-            <h3>What is Property Management?</h3>
-            <p>
-              Property management is a professional service that takes care of
-              every aspect of renting, leasing, and maintaining a property. From
-              finding the right tenants to ensuring timely rent payments and
-              keeping the property in top condition, our team ensures maximum
-              returns with zero stress.
-            </p>
-
-            <h3>Why Do You Need Property Management Services?</h3>
-            <p>
-              Owning a property is an investment, but managing it can be
-              overwhelming. Here's why you need expert property management:
-            </p>
+            <h3>Our Scope Includes:</h3>
             
             <ul class="benefits-list">
-              <li><b>Maximize Rental Income:</b> We ensure you get the best possible rent for your property.</li>
-              <li><b>Time-Saving & Hassle-Free:</b> No more dealing with tenants, repairs, or legal paperwork.</li>
-              <li><b>Tenant Screening & Management:</b> Find reliable tenants through our rigorous verification process.</li>
-              <li><b>End-to-End Maintenance:</b> Regular inspections, repairs, and upkeep for property value appreciation.</li>
-              <li><b>Legal Compliance:</b> Hassle-free documentation, rent agreements, and eviction handling.</li>
-              <li><b>Specialized NRI Property Management:</b> Dedicated support for NRI clients, ensuring peace of mind from afar.</li>
-              <li><b>24/7 Emergency Support:</b> Quick resolution of tenant complaints and urgent repairs.</li>
+              <li><b>Strategic rent optimization</b></li>
+              <li><b>Transparent financial reporting</b></li>
+              <li><b>Preventive maintenance</b></li>
+              <li><b>Full legal compliance</b></li>
+              <li><b>Emergency response & resolution</b></li>
             </ul>
           </div>
         </div>
@@ -138,7 +137,7 @@
     </section>
 
     <!-- After the rental-returns-section and before the footer -->
-    <section class="why-choose-us-section">
+    <!-- <section class="why-choose-us-section">
       <div class="why-choose-container">
         <div class="section-header">
           <h2>Why Choose Sree Varahi Ventures?</h2>
@@ -157,7 +156,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer - Copied from index.html -->
     <footer class="main-footer">
@@ -170,7 +169,7 @@
         </div>
         
         <div class="footer-logo">
-          <img src="./assets" alt="Logo" />
+          <img src="./assets/Logo.jpeg" alt="Logo" />
         </div>
         
         <div class="footer-contact">
@@ -202,5 +201,172 @@
         </div>
       </div>
     </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="book-visit-form">
+          <h3>Contact Us</h3>
+          <form id="visitForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Full Name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number</label>
+              <input
+                type="tel"
+                id="mobileNumber"
+                name="mobileNumber"
+                placeholder="Mobile Number"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input
+                type="email"
+                id="emailAddress"
+                name="emailAddress"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+
+            <button type="submit" class="submit-btn">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Dropdown functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownButton = document.querySelector(".dropdown-button");
+        const dropdownContent = document.querySelector(".dropdown-content");
+        let isDropdownOpen = false;
+
+        // Toggle dropdown on button click
+        dropdownButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          isDropdownOpen = !isDropdownOpen;
+          this.classList.toggle("active");
+          dropdownContent.classList.toggle("show");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!dropdownButton.contains(e.target) && isDropdownOpen) {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+
+        // Handle dropdown links
+        dropdownContent.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          });
+        });
+
+        // Close dropdown when pressing Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && isDropdownOpen) {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+      });
+
+      // Hamburger menu functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navRight = document.querySelector(".nav-right");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        hamburger.addEventListener("click", function () {
+          // Toggle hamburger animation
+          hamburger.classList.toggle("active");
+          // Toggle menu
+          navRight.classList.toggle("active");
+          // Prevent body scroll when menu is open
+          document.body.style.overflow = navRight.classList.contains("active")
+            ? "hidden"
+            : "auto";
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navRight.classList.remove("active");
+            document.body.style.overflow = "auto";
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            !hamburger.contains(e.target) &&
+            !navRight.contains(e.target) &&
+            navRight.classList.contains("active")
+          ) {
+            hamburger.classList.remove("active");
+            navRight.classList.remove("active");
+            document.body.style.overflow = "auto";
+          }
+        });
+      });
+
+      // Modal functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("contactModal");
+        const contactBtn = document.getElementById("contactBtn");
+        const span = document.getElementsByClassName("close-modal")[0];
+
+        // Function to open modal
+        function openModal() {
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        // Function to close modal
+        function closeModal() {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Contact Us button functionality
+        contactBtn.onclick = function () {
+          openModal();
+        };
+
+        // Close modal when clicking X
+        span.onclick = function () {
+          closeModal();
+        };
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            closeModal();
+          }
+        };
+      });
+    </script>
   </body>
 </html>

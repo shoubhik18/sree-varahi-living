@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tenant Management - Sree Varahi Living</title>
+    <title>Tenant Management - NEXFINR</title>
     <link rel="stylesheet" href="tenant-management.css" />
     <script
       src="https://kit.fontawesome.com/376593105a.js"
@@ -15,18 +15,37 @@
       <nav class="navbar">
         <div class="nav-container">
           <div class="logo">
-            <img src="path-to-logo.png" alt="" />
+            <img
+              height="100px"
+              width="100px"
+              src="./assets/Logo.jpeg"
+              alt="NEXFINR Logo"
+            />
           </div>
           <div class="nav-right">
             <div class="nav-links">
               <a href="./index.html">Home</a>
-              <a href="./portfolio-management.html">Portfolio Management</a>
-              <a href="./products.html">Services</a>
-              <!-- <a href="#find-a-property">Find A Property</a> -->
+              <div class="dropdown-container">
+                <button class="dropdown-button">
+                  Portfolio Management
+                  <i class="fas fa-chevron-down arrow-icon"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="./portfolio-management/plan-a.html">Plan A</a>
+                  <a href="./portfolio-management/plan-b.html">Plan B</a>
+                  <a href="./portfolio-management/plan-c.html">Plan C</a>
+                </div>
+              </div>
+              <a href="./propertManagement.html">Services</a>
               <a href="./about-us.html">About Us</a>
             </div>
-            <button class="contact-btn">CONTACT US</button>
+            <button class="contact-btn" id="contactBtn">CONTACT US</button>
           </div>
+          <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </nav>
     </header>
@@ -90,17 +109,10 @@
       <div class="tenant-management-container">
         <!-- Section header with title and description -->
         <div class="section-intro">
-          <h2>
-            Tenant Management Services – Hassle-Free Renting with Sree Varahi
-            Ventures
-          </h2>
+          <h2>Reliable Tenants. Seamless Experience.</h2>
           <p>
-            At Sree Varahi Ventures, we understand that managing tenants can be
-            time-consuming and challenging for property owners. Our
-            comprehensive Tenant Management services ensure a seamless and
-            stress-free rental experience for both landlords and tenants. From
-            tenant screening to lease agreements and ongoing support, we handle
-            it all, so you don't have to.
+            Managing tenants can be time-consuming—let us handle it. We ensure quality occupancy, timely 
+            rent collections, and prompt support, all while maintaining a strong landlord-tenant relationship.
           </p>
         </div>
 
@@ -111,48 +123,21 @@
           </div>
 
           <div class="row-content">
-            <h3>What We Offer in Tenant Management</h3>
+            <h3>Our Services Include:</h3>
 
             <ul class="benefits-list">
-              <li>
-                <b>Tenant Screening & Selection</b> – We conduct thorough
-                background checks, including employment verification, rental
-                history, and criminal records, to ensure you get reliable and
-                responsible tenants.
-              </li>
-              <li>
-                <b> Lease Agreement & Documentation</b> – Our legal experts
-                draft and manage lease agreements, ensuring all terms and
-                conditions are transparent and legally binding.
-              </li>
-              <li>
-                <b> Rent Collection & Financial Management</b> – We take care of
-                timely rent collection, issue monthly statements, and handle any
-                payment concerns, so you never have to worry about delayed
-                payments.
-              </li>
-              <li>
-                <b> Tenant Relations & Issue Resolution</b> – Our team acts as
-                the primary point of contact for tenant queries, ensuring smooth
-                communication and quick conflict resolution.
-              </li>
-              <li>
-                <b>Regular Property Inspections</b> – We conduct routine
-                inspections to ensure the tenant maintains the property as per
-                the agreement, protecting your investment.
-              </li>
-              <li>
-                <b>24/7 Support & Emergency Assistance</b> – Tenants can reach
-                out to us for maintenance issues or emergencies, ensuring prompt
-                resolution and peace of mind for property owners.
-              </li>
+              <li><b>Rigorous tenant screening & background checks</b></li>
+              <li><b>Legally compliant lease agreements</b></li>
+              <li><b>Timely rent collection & financial reporting</b></li>
+              <li><b>Ongoing tenant communication and dispute handling</b></li>
+              <li><b>Property inspections & behavior compliance</b></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Us Section -->
+    <!-- Why Choose Us Section
     <section class="why-choose-us-section">
       <div class="why-choose-container">
         <div class="section-header">
@@ -185,20 +170,66 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="book-visit-form">
+          <h3>Contact Us</h3>
+          <form id="visitForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Full Name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number</label>
+              <input
+                type="tel"
+                id="mobileNumber"
+                name="mobileNumber"
+                placeholder="Mobile Number"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input
+                type="email"
+                id="emailAddress"
+                name="emailAddress"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+
+            <button type="submit" class="submit-btn">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer - Copied from index.html -->
     <footer class="main-footer">
       <div class="footer-main">
         <div class="footer-nav">
           <a href="./index.html">HOME</a>
-          <a href="./products.html">PRODUCTS</a>
+          <a href="./propertManagement.html">PRODUCTS</a>
           <a href="#">FIND A PROPERTY</a>
           <a href="#">PROJECTS</a>
         </div>
 
         <div class="footer-logo">
-          <img src="./assets" alt="Logo" />
+          <img src="./assets/Logo.jpeg" alt="Logo" />
         </div>
 
         <div class="footer-contact">
@@ -234,5 +265,126 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Dropdown functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownButton = document.querySelector(".dropdown-button");
+        const dropdownContent = document.querySelector(".dropdown-content");
+        let isDropdownOpen = false;
+
+        // Toggle dropdown on button click
+        dropdownButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          isDropdownOpen = !isDropdownOpen;
+          this.classList.toggle("active");
+          dropdownContent.classList.toggle("show");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!dropdownButton.contains(e.target) && isDropdownOpen) {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+
+        // Handle dropdown links
+        dropdownContent.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          });
+        });
+
+        // Close dropdown when pressing Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && isDropdownOpen) {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+      });
+
+      // Hamburger menu functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navRight = document.querySelector(".nav-right");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        hamburger.addEventListener("click", function () {
+          // Toggle hamburger animation
+          hamburger.classList.toggle("active");
+          // Toggle menu
+          navRight.classList.toggle("active");
+          // Prevent body scroll when menu is open
+          document.body.style.overflow = navRight.classList.contains("active")
+            ? "hidden"
+            : "auto";
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navRight.classList.remove("active");
+            document.body.style.overflow = "auto";
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            !hamburger.contains(e.target) &&
+            !navRight.contains(e.target) &&
+            navRight.classList.contains("active")
+          ) {
+            hamburger.classList.remove("active");
+            navRight.classList.remove("active");
+            document.body.style.overflow = "auto";
+          }
+        });
+      });
+
+      // Modal functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("contactModal");
+        const contactBtn = document.getElementById("contactBtn");
+        const span = document.getElementsByClassName("close-modal")[0];
+
+        // Function to open modal
+        function openModal() {
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        // Function to close modal
+        function closeModal() {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Contact Us button functionality
+        contactBtn.onclick = function () {
+          openModal();
+        };
+
+        // Close modal when clicking X
+        span.onclick = function () {
+          closeModal();
+        };
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            closeModal();
+          }
+        };
+      });
+    </script>
   </body>
 </html>

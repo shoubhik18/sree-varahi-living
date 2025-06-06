@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Legal & Documentation - Sree Varahi Living</title>
+    <title>Legal & Documentation - NEXFINR</title>
     <link rel="stylesheet" href="legal-and-documentation.css" />
     <script
       src="https://kit.fontawesome.com/376593105a.js"
@@ -15,18 +15,38 @@
       <nav class="navbar">
         <div class="nav-container">
           <div class="logo">
-            <img src="path-to-logo.png" alt="" />
+            <img
+              height="100px"
+              width="100px"
+              src="./assets/Logo.jpeg"
+              alt="NEXFINR Logo"
+            />
           </div>
           <div class="nav-right">
             <div class="nav-links">
               <a href="./index.html">Home</a>
-              <a href="./portfolio-management.html">Portfolio Management</a>
-              <a href="./products.html">Services</a>
+              <div class="dropdown-container">
+                <button class="dropdown-button">
+                  Portfolio Management
+                  <i class="fas fa-chevron-down arrow-icon"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="./portfolio-management/plan-a.html">Plan A</a>
+                  <a href="./portfolio-management/plan-b.html">Plan B</a>
+                  <a href="./portfolio-management/plan-c.html">Plan C</a>
+                </div>
+              </div>
+              <a href="./propertManagement.html">Services</a>
               <!-- <a href="#find-a-property">Find A Property</a> -->
               <a href="./about-us.html">About Us</a>
             </div>
-            <button class="contact-btn">CONTACT US</button>
+            <button class="contact-btn" id="contactBtn">CONTACT US</button>
           </div>
+          <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </nav>
     </header>
@@ -36,7 +56,7 @@
       <div class="hero-content">
         <div class="breadcrumb">
           <p>Services »</p>
-          <h1>Leagl And Documentation</h1>
+          <h1>Legal And Documentation</h1>
         </div>
       </div>
     </section>
@@ -90,75 +110,34 @@
       </div>
     </section>
 
-    <!-- Maintenance & Repairs Section -->
-    <section class="maintenance-repair-section">
-      <div class="maintenance-repair-container">
+    <!-- Legal & Documentation Section -->
+    <section class="legal-documentation-section">
+      <div class="legal-documentation-container">
         <!-- Section header with title and description -->
         <div class="section-intro">
-          <h2>Legal & Documentation – Hassle-Free Property Transactions</h2>
+          <h2>Secure. Compliant. Transparent.</h2>
           <p>
-            At Sree Varahi Ventures, we understand that property transactions
-            involve complex legal formalities. Our Legal & Documentation
-            Services ensure a smooth, transparent, and legally compliant process
-            for property buying, selling, leasing, or investment. From title
-            verification to sale deed execution, we handle everything
-            professionally, so you can focus on your investment without legal
-            worries.
+            Navigating property legalities can be complex—our legal team ensures every transaction is 
+            thoroughly vetted, compliant, and risk-free.
           </p>
         </div>
 
         <!-- Content row with image and text -->
         <div class="content-row">
           <div class="row-image">
-            <img src="./assets/lega-docs.png" alt="Leagl & Documentation" />
+            <img src="./assets/lega-docs.png" alt="Legal & Documentation" />
           </div>
 
           <div class="row-content">
-            <h3>Our Legal & Documentation Services:</h3>
+            <h3>We Handle:</h3>
 
             <ul class="benefits-list">
-              <li>
-                <b>Title Verification & Due Diligence –</b> 
-                <ul class="benefits-list" >
-                    <li>Ensuring property titles are clear and legally valid before purchase.</li>
-                    <li>Verifying ownership history and encumbrances to avoid future disputes.</li>
-                </ul>
-              </li>
-              <li>
-                <b>Agreement Drafting & Review –</b> 
-                <ul class="benefits-list" >
-                    <li>Customized agreements for sales, leases, and rentals to protect your interests.</li>
-                    <li>Expert legal review of contracts to avoid hidden clauses and risks.</li>
-                </ul>
-              </li>
-              <li>
-                <b>Property Registration & Stamp Duty Assistance –</b> 
-                <ul class="benefits-list" >
-                    <li>Guidance on property registration process as per government norms.</li>
-                    <li>Ensuring correct stamp duty and legal compliance for hassle-free ownership transfer.</li>
-                </ul>
-              </li>
-              <li>
-                <b>Encumbrance Certificate & Tax Compliance –</b> 
-                <ul class="benefits-list" >
-                    <li>Obtaining an Encumbrance Certificate (EC) to confirm no pending liabilities on the property.</li>
-                    <li>Assistance with property tax payments and legal compliance for smooth transactions.</li>
-                </ul>
-              </li>
-              <li>
-                <b>Sale Deed & Power of Attorney Execution –</b> 
-                <ul class="benefits-list" >
-                    <li>Preparation and verification of Sale Deeds for property transfer.</li>
-                    <li>Assisting NRI clients in executing a Power of Attorney (PoA) for seamless transactions.</li>
-                </ul>
-              </li>
-              <li>
-                <b>Dispute Resolution & Legal Advisory –</b> 
-                <ul class="benefits-list" >
-                    <li>Expert legal counsel for property disputes, tenant issues, and inheritance claims.</li>
-                    <li>Representation in legal proceedings and settlements for property-related conflicts.</li>
-                </ul>
-              </li>
+              <li><b>Title verification & due diligence</b></li>
+              <li><b>Agreement drafting & legal review</b></li>
+              <li><b>Property registration & stamp duty assistance</b></li>
+              <li><b>EC certificates, tax filings & compliance</b></li>
+              <li><b>PoA execution for NRIs</b></li>
+              <li><b>Legal advisory & dispute resolution</b></li>
             </ul>
           </div>
         </div>
@@ -166,7 +145,7 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us-section">
+    <!-- <section class="why-choose-us-section">
       <div class="why-choose-container">
         <div class="section-header">
           <h2>Why Choose Sree Varahi Ventures for Legal & Documentation?</h2>
@@ -193,7 +172,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer - Copied from index.html -->
     <footer class="main-footer">
@@ -206,7 +185,7 @@
         </div>
 
         <div class="footer-logo">
-          <img src="./assets" alt="Logo" />
+          <img src="./assets/Logo.jpeg" alt="Logo" />
         </div>
 
         <div class="footer-contact">
@@ -242,5 +221,172 @@
         </div>
       </div>
     </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="book-visit-form">
+          <h3>Contact Us</h3>
+          <form id="visitForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Full Name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number</label>
+              <input
+                type="tel"
+                id="mobileNumber"
+                name="mobileNumber"
+                placeholder="Mobile Number"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input
+                type="email"
+                id="emailAddress"
+                name="emailAddress"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+
+            <button type="submit" class="submit-btn">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Dropdown functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropdownButton = document.querySelector(".dropdown-button");
+        const dropdownContent = document.querySelector(".dropdown-content");
+        let isDropdownOpen = false;
+
+        // Toggle dropdown on button click
+        dropdownButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          isDropdownOpen = !isDropdownOpen;
+          this.classList.toggle("active");
+          dropdownContent.classList.toggle("show");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!dropdownButton.contains(e.target) && isDropdownOpen) {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+
+        // Handle dropdown links
+        dropdownContent.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          });
+        });
+
+        // Close dropdown when pressing Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && isDropdownOpen) {
+            isDropdownOpen = false;
+            dropdownButton.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+      });
+
+      // Hamburger menu functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger");
+        const navRight = document.querySelector(".nav-right");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        hamburger.addEventListener("click", function () {
+          // Toggle hamburger animation
+          hamburger.classList.toggle("active");
+          // Toggle menu
+          navRight.classList.toggle("active");
+          // Prevent body scroll when menu is open
+          document.body.style.overflow = navRight.classList.contains("active")
+            ? "hidden"
+            : "auto";
+        });
+
+        // Close menu when clicking a link
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navRight.classList.remove("active");
+            document.body.style.overflow = "auto";
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            !hamburger.contains(e.target) &&
+            !navRight.contains(e.target) &&
+            navRight.classList.contains("active")
+          ) {
+            hamburger.classList.remove("active");
+            navRight.classList.remove("active");
+            document.body.style.overflow = "auto";
+          }
+        });
+      });
+
+      // Modal functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("contactModal");
+        const contactBtn = document.getElementById("contactBtn");
+        const span = document.getElementsByClassName("close-modal")[0];
+
+        // Function to open modal
+        function openModal() {
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        // Function to close modal
+        function closeModal() {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Contact Us button functionality
+        contactBtn.onclick = function () {
+          openModal();
+        };
+
+        // Close modal when clicking X
+        span.onclick = function () {
+          closeModal();
+        };
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            closeModal();
+          }
+        };
+      });
+    </script>
   </body>
 </html>
