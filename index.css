@@ -1902,10 +1902,6 @@ body {
     opacity: 0.15;
 }
 
-.subscription-box.featured-plan {
-    /* Remove default highlighting - will only show on hover */
-}
-
 .plan-header {
     text-align: center;
     margin-bottom: 30px;
