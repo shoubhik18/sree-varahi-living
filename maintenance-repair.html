@@ -141,34 +141,68 @@
       </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <!-- <section class="why-choose-us-section">
-      <div class="why-choose-container">
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
         <div class="section-header">
-          <h2>Why Choose Sree Varahi Ventures for Property Maintenance?</h2>
+          <h2>Frequently Asked Questions</h2>
           <div class="section-underline"></div>
+          <p class="section-description">Get answers to the most common questions about our maintenance & repair services</p>
         </div>
+        
+        <div class="faq-content">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you offer routine property maintenance services?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we schedule and supervise regular upkeep such as plumbing, electrical, painting, pest control, etc.</p>
+            </div>
+          </div>
 
-        <div class="choose-us-content">
-          <div class="choose-us-points">
-            <ul class="benefits-list large-benefits">
-              <li>
-                <b> Comprehensive & Proactive Care</b> – We don't just fix problems; we prevent them.
-              </li>
-              <li>
-                <b> Cost-Effective Solutions</b> – Quality repairs at the best possible rates.
-              </li>
-              <li>
-                <b> Stress-Free Ownership</b> – We handle maintenance so you don't have to.
-              </li>
-              <li>
-                <b>Domestic & NRI Property Management Expertise</b> – Whether you're in India or abroad, your property is in safe hands.
-              </li>
-            </ul>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How are emergency repair issues handled?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Emergency issues are addressed within 24 hours through our verified vendor network and service partners.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Are repair expenses included in the management fee?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Routine inspections are included, but actual repair costs are billed transparently after client approval.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can you handle renovations or upgrades?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we offer project management for property renovations, including budgeting, design consultation, and contractor supervision.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do I get updates on maintenance status?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, you receive real-time updates, invoices, and photographs via email or your dedicated client dashboard.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Footer - Completely separate structure -->
     <footer class="main-footer">
@@ -383,6 +417,41 @@
             closeModal();
           }
         };
+      });
+
+      // FAQ functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          const answer = item.querySelector(".faq-answer");
+          const icon = item.querySelector(".faq-icon");
+
+          question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            // Close all other FAQ items
+            faqItems.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove("active");
+                otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+                otherItem.querySelector(".faq-icon").style.transform = "rotate(0deg)";
+              }
+            });
+
+            // Toggle current item
+            if (isActive) {
+              item.classList.remove("active");
+              answer.style.maxHeight = "0";
+              icon.style.transform = "rotate(0deg)";
+            } else {
+              item.classList.add("active");
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              icon.style.transform = "rotate(180deg)";
+            }
+          });
+        });
       });
     </script>
   </body>

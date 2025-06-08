@@ -161,34 +161,68 @@
       </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <!-- <section class="why-choose-us-section">
-      <div class="why-choose-container">
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
         <div class="section-header">
-          <h2>Why Choose Sree Varahi Ventures for Real Estate?</h2>
+          <h2>Frequently Asked Questions</h2>
           <div class="section-underline"></div>
+          <p class="section-description">Get answers to the most common questions about our real estate services</p>
         </div>
+        
+        <div class="faq-content">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you assist in buying and selling properties?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we provide advisory services, property sourcing, buyer-seller matchmaking, and transaction support.</p>
+            </div>
+          </div>
 
-        <div class="choose-us-content">
-          <div class="choose-us-points">
-            <ul class="benefits-list large-benefits">
-              <li>
-                <b>Expert Market Knowledge –</b> Deep understanding of local real estate trends and prime investment opportunities.
-              </li>
-              <li>
-                <b>End-to-End Service –</b> Complete assistance from property search to final documentation and registration.
-              </li>
-              <li>
-                <b>Transparent Dealings –</b> Honest pricing, clear communication, and no hidden costs throughout the transaction.
-              </li>
-              <li>
-                <b>Profitable Investment Guidance –</b> Strategic advice to maximize your returns whether buying, selling, or investing.
-              </li>
-            </ul>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What kind of properties do you deal in?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We specialize in premium residential and commercial properties across major Indian metros and emerging growth corridors.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you help with real estate investments?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we offer insights on high-return opportunities, rental yield analysis, and long-term appreciation trends.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you provide valuation or property audit services?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we conduct property valuations, legal title checks, and due diligence reports for informed decisions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I know if a property is safe to invest in?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Every property we recommend undergoes a multi-point verification process including location analysis, title scrutiny, and regulatory compliance.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Contact Modal -->
     <div id="contactModal" class="modal">
@@ -402,6 +436,41 @@
             closeModal();
           }
         };
+      });
+
+      // FAQ functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          const answer = item.querySelector(".faq-answer");
+          const icon = item.querySelector(".faq-icon");
+
+          question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            // Close all other FAQ items
+            faqItems.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove("active");
+                otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+                otherItem.querySelector(".faq-icon").style.transform = "rotate(0deg)";
+              }
+            });
+
+            // Toggle current item
+            if (isActive) {
+              item.classList.remove("active");
+              answer.style.maxHeight = "0";
+              icon.style.transform = "rotate(0deg)";
+            } else {
+              item.classList.add("active");
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              icon.style.transform = "rotate(180deg)";
+            }
+          });
+        });
       });
     </script>
   </body>

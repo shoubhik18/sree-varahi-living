@@ -107,12 +107,30 @@ body {
 .plan-overview h2 {
     font-size: 2rem;
     color: #EDC568;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.plan-overview p {
-    font-size: 1.1rem;
+.plan-subtitle {
+    font-size: 1.2rem;
+    color: #CCCCCC;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.ideal-for-section {
+    margin-top: 30px;
+}
+
+.ideal-for-section h3 {
+    font-size: 1.3rem;
     color: #FFFFFF;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.ideal-for-section p {
+    font-size: 1.1rem;
+    color: #CCCCCC;
 }
 
 /* Features Grid */

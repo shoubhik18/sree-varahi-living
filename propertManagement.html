@@ -137,27 +137,68 @@
       </div>
     </section>
 
-    <!-- After the rental-returns-section and before the footer -->
-    <!-- <section class="why-choose-us-section">
-      <div class="why-choose-container">
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
         <div class="section-header">
-          <h2>Why Choose Sree Varahi Ventures?</h2>
+          <h2>Frequently Asked Questions</h2>
           <div class="section-underline"></div>
+          <p class="section-description">Get answers to the most common questions about our property management services</p>
         </div>
         
-        <div class="choose-us-content">
-          <div class="choose-us-points">
-            <ul class="benefits-list large-benefits">
-              <li><b>Trusted by Property Owners Across Hyderabad</b> – Our proven track record ensures satisfied landlords and happy tenants.</li>
-              <li><b>Expert Management for Maximum Returns</b> – We optimize rental income while maintaining property value.</li>
-              <li><b>End-to-End Property Handling</b> – From marketing and tenant selection to financial reporting and maintenance, we cover it all.</li>
-              <li><b>100% Transparency & Reliability</b> – No hidden costs, just seamless property management.</li>
-              <li><b>Specialized Services for NRIs</b> – Managing properties in India while you're abroad has never been easier.</li>
-            </ul>
+        <div class="faq-content">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What does your property management service cover?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>It includes rent collection, tenant coordination, inspections, maintenance, financial reporting, and vacancy management.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can you manage properties if I'm living in a different city or abroad?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we specialize in remote management for outstation and NRI clients with complete transparency and regular updates.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you provide monthly performance or income reports?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, detailed reports with rental income, expenses, and service activities are shared monthly or quarterly.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do you handle tenant complaints or emergencies?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We have a dedicated support line and service partners on call for 24/7 emergency resolution.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Are there any hidden charges for management services?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>No. All costs are clearly stated upfront. We operate with a transparent, no-brokerage model.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Footer - Copied from index.html -->
     <footer class="main-footer">
@@ -368,6 +409,41 @@
             closeModal();
           }
         };
+      });
+
+      // FAQ functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          const answer = item.querySelector(".faq-answer");
+          const icon = item.querySelector(".faq-icon");
+
+          question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            // Close all other FAQ items
+            faqItems.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove("active");
+                otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+                otherItem.querySelector(".faq-icon").style.transform = "rotate(0deg)";
+              }
+            });
+
+            // Toggle current item
+            if (isActive) {
+              item.classList.remove("active");
+              answer.style.maxHeight = "0";
+              icon.style.transform = "rotate(0deg)";
+            } else {
+              item.classList.add("active");
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              icon.style.transform = "rotate(180deg)";
+            }
+          });
+        });
       });
     </script>
   </body>

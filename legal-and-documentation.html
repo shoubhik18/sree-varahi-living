@@ -145,35 +145,68 @@
       </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <!-- <section class="why-choose-us-section">
-      <div class="why-choose-container">
-        <div class="section-header">
-          <h2>Why Choose Sree Varahi Ventures for Legal & Documentation?</h2>
-          <div class="section-underline"></div>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <div class="faq-header">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-underline"></div>
+          <p>Get answers to common questions about our legal and documentation services</p>
         </div>
 
-        <div class="choose-us-content">
-          <div class="choose-us-points">
-            <ul class="benefits-list large-benefits">
-              <li>
-                <b> End-to-End Legal Support</b> – From verification to registration, we handle all legal formalities.
-              </li>
-              <li>
-                <b> Experienced Legal Experts</b> – A team of property law specialists for accurate documentation.
+        <div class="faq-content">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you help with rent or lease agreements?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we draft and register rental/lease agreements in compliance with local laws and your terms.</p>
+            </div>
+          </div>
 
-              </li>
-              <li>
-                <b> Hassle-Free Process</b> – We simplify the legal complexities, saving your time and effort.
-              </li>
-              <li>
-                <b>Transparency & Compliance</b> – 100% legally compliant transactions with no hidden issues.
-              </li>
-            </ul>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can you help me register property documents or sale deeds?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely. We coordinate with legal professionals and local authorities to complete the registration process efficiently.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What if there's a legal dispute regarding the property?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Our legal partners can represent or guide you through property disputes, eviction notices, and court proceedings if required.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you assist with power of attorney for NRI clients?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we facilitate the execution and notarization of Power of Attorney documents for absentee landlords.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is documentation available in digital format?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, all legal documents are stored securely and shared digitally for easy access and record keeping.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Footer - Copied from index.html -->
     <footer class="main-footer">
@@ -388,6 +421,35 @@
             closeModal();
           }
         };
+      });
+
+      // FAQ functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          const answer = item.querySelector(".faq-answer");
+          const icon = item.querySelector(".faq-icon");
+
+          question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            // Close all FAQ items
+            faqItems.forEach((faqItem) => {
+              faqItem.classList.remove("active");
+              faqItem.querySelector(".faq-answer").style.maxHeight = null;
+              faqItem.querySelector(".faq-icon").style.transform = "rotate(0deg)";
+            });
+
+            // If this item wasn't active, open it
+            if (!isActive) {
+              item.classList.add("active");
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              icon.style.transform = "rotate(180deg)";
+            }
+          });
+        });
       });
     </script>
   </body>

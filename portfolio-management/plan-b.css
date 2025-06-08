@@ -87,14 +87,14 @@ body {
 
 .subtitle {
     font-size: 1.5rem;
-    color: #4CAF50; /* Changed to green for Standard Plan */
+    color: #EDC568;
     margin-bottom: 20px;
 }
 
 .divider {
     width: 60px;
     height: 3px;
-    background-color: #4CAF50; /* Changed to green for Standard Plan */
+    background-color: #EDC568;
     margin: 0 auto;
 }
 
@@ -106,13 +106,31 @@ body {
 
 .plan-overview h2 {
     font-size: 2rem;
-    color: #4CAF50; /* Changed to green for Standard Plan */
-    margin-bottom: 20px;
+    color: #EDC568;
+    margin-bottom: 30px;
 }
 
-.plan-overview p {
-    font-size: 1.1rem;
+.plan-subtitle {
+    font-size: 1.2rem;
+    color: #CCCCCC;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.ideal-for-section {
+    margin-top: 30px;
+}
+
+.ideal-for-section h3 {
+    font-size: 1.3rem;
     color: #FFFFFF;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.ideal-for-section p {
+    font-size: 1.1rem;
+    color: #CCCCCC;
 }
 
 /* Features Grid */
@@ -137,7 +155,7 @@ body {
 
 .feature-card i {
     font-size: 2.5rem;
-    color: #4CAF50; /* Changed to green for Standard Plan */
+    color: #EDC568;
     margin-bottom: 20px;
 }
 
@@ -162,7 +180,7 @@ body {
 
 .investment-cta h2 {
     font-size: 2rem;
-    color: #4CAF50; /* Changed to green for Standard Plan */
+    color: #EDC568;
     margin-bottom: 20px;
 }
 
@@ -173,8 +191,8 @@ body {
 }
 
 .invest-now-btn {
-    background-color: #4CAF50; /* Changed to green for Standard Plan */
-    color: #FFFFFF;
+    background-color: #EDC568;
+    color: #000000;
     padding: 15px 40px;
     border: none;
     border-radius: 30px;
@@ -185,9 +203,9 @@ body {
 }
 
 .invest-now-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #FFFFFF;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 4px 12px rgba(237, 197, 104, 0.3);
 }
 
 /* Footer Styles */

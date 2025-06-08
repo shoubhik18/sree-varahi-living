@@ -138,40 +138,68 @@
       </div>
     </section>
 
-    <!-- Why Choose Us Section
-    <section class="why-choose-us-section">
-      <div class="why-choose-container">
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
         <div class="section-header">
-          <h2>Why Choose Sree Varahi Ventures for Tenant Management?</h2>
+          <h2>Frequently Asked Questions</h2>
           <div class="section-underline"></div>
+          <p class="section-description">Get answers to the most common questions about our tenant management services</p>
         </div>
+        
+        <div class="faq-content">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do you screen potential tenants?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We conduct thorough background checks including ID verification, credit scoring, employment details, and rental history.</p>
+            </div>
+          </div>
 
-        <div class="choose-us-content">
-          <div class="choose-us-points">
-            <ul class="benefits-list large-benefits">
-              <li>
-                 <b>Trustworthy & Professional Service –</b>  Our experienced team
-                ensures smooth and transparent tenant management.
-              </li>
-              <li>
-                <b> Hassle-Free Experience for Property Owners –</b>  We handle
-                everything, from tenant onboarding to ongoing support.
-              </li>
-              <li>
-                <b>Legal Compliance & Risk Mitigation –</b> Our contracts and
-                processes adhere to local property laws, ensuring your rental
-                business is legally protected.
-              </li>
-              <li>
-                <b>Domestic & NRI Property Management Expertise –</b>  Whether you are
-                in India or overseas, we ensure seamless tenant management for
-                your property.
-              </li>
-            </ul>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What happens if the tenant defaults on rent or damages the property?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We have legal safeguards in place within our agreements and handle dispute resolution swiftly and legally.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you assist with rental agreement preparation and renewals?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we manage the entire documentation lifecycle — including drafting, e-signatures, and renewal notifications.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I choose the type of tenant I want?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, your preferences regarding profession, family type, etc., are fully respected during the tenant selection process.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Will I be informed when tenants vacate or shift?</h3>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely. We provide advanced notice and arrange seamless re-letting or exit management without loss of rental income.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- Contact Modal -->
     <div id="contactModal" class="modal">
@@ -386,6 +414,41 @@
             closeModal();
           }
         };
+      });
+
+      // FAQ functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          const answer = item.querySelector(".faq-answer");
+          const icon = item.querySelector(".faq-icon");
+
+          question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            // Close all other FAQ items
+            faqItems.forEach((otherItem) => {
+              if (otherItem !== item) {
+                otherItem.classList.remove("active");
+                otherItem.querySelector(".faq-answer").style.maxHeight = "0";
+                otherItem.querySelector(".faq-icon").style.transform = "rotate(0deg)";
+              }
+            });
+
+            // Toggle current item
+            if (isActive) {
+              item.classList.remove("active");
+              answer.style.maxHeight = "0";
+              icon.style.transform = "rotate(0deg)";
+            } else {
+              item.classList.add("active");
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              icon.style.transform = "rotate(180deg)";
+            }
+          });
+        });
       });
     </script>
   </body>

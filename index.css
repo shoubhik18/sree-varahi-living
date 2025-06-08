@@ -2955,3 +2955,102 @@ body {
         margin-bottom: 20px;
     }
 }
+
+/* Hidden items functionality */
+.hidden-item {
+    display: none !important;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.subscription-box.expanded .hidden-item {
+    display: flex !important;
+    opacity: 1;
+    max-height: 100px;
+}
+
+/* Read More Button */
+.read-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,215,0,0.2);
+}
+
+.read-more-btn {
+    background: linear-gradient(135deg, #FFD700, #B08D57);
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255,215,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.read-more-btn:hover {
+    background: linear-gradient(135deg, #B08D57, #FFD700);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+}
+
+.read-more-btn.expanded {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #FFFFFF;
+}
+
+.read-more-btn.expanded:hover {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+/* Book Now Feature Button */
+.book-now-feature-btn {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.book-now-feature-btn:hover {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+}
+
+.price-item .feature-value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Mobile responsive styles for new elements */
+@media (max-width: 768px) {
+    .read-more-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .book-now-feature-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .price-item .feature-value {
+        justify-content: flex-start;
+    }
+}

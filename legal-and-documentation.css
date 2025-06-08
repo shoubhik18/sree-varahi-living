@@ -430,25 +430,25 @@ body {
     
     .legal-documentation-container {
         padding: 0 30px;
-    }
-    
-    .section-intro h2 {
+}
+
+.section-intro h2 {
         font-size: 36px;
-    }
-    
-    .section-intro p {
-        font-size: 18px;
-    }
-    
-    .content-row {
-        gap: 40px;
+}
+
+.section-intro p {
+    font-size: 18px;
+}
+
+.content-row {
+    gap: 40px;
     }
     
     .row-content h3 {
         font-size: 28px;
         margin-bottom: 30px;
-    }
-    
+}
+
     .benefits-list li {
         font-size: 16px;
         padding-left: 50px;
@@ -465,8 +465,8 @@ body {
 @media (max-width: 992px) {
     .section-intro {
         margin-bottom: 40px;
-    }
-    
+}
+
     .section-intro h2 {
         font-size: 32px;
     }
@@ -476,7 +476,7 @@ body {
     }
     
     .content-row {
-        flex-direction: column;
+    flex-direction: column;
         gap: 40px;
     }
     
@@ -488,20 +488,20 @@ body {
     .row-image {
         margin: 0 auto;
         max-width: 450px;
-    }
-    
-    .row-content h3 {
+}
+
+.row-content h3 {
         font-size: 26px;
         margin-bottom: 25px;
         text-align: center;
-    }
-    
+}
+
     .benefits-list li {
-        font-size: 16px;
+    font-size: 16px;
         padding-left: 50px;
-        margin-bottom: 20px;
-    }
-    
+    margin-bottom: 20px;
+}
+
     .benefits-list li:before {
         width: 35px;
         height: 35px;
@@ -512,7 +512,7 @@ body {
 @media (max-width: 992px) {
     .hamburger {
         display: block;
-    }
+}
 
     .nav-right {
         position: fixed;
@@ -530,7 +530,7 @@ body {
     }
 
     .nav-right.active {
-        left: 0;
+    left: 0;
         display: flex;
     }
 
@@ -542,7 +542,7 @@ body {
 
     .contact-btn {
         margin-top: 20px;
-    }
+}
 
     /* Hamburger Animation */
     .hamburger.active .bar:nth-child(2) {
@@ -552,17 +552,17 @@ body {
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-
+    
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-
+    
     /* Dropdown adjustments for mobile */
     .dropdown-container {
         width: 100%;
         text-align: center;
     }
-
+    
     .dropdown-content {
         position: static;
         width: 100%;
@@ -582,13 +582,13 @@ body {
         max-height: 500px;
         padding: 10px 0;
     }
-
+    
     .dropdown-button {
         justify-content: center;
         width: 100%;
         padding: 10px 0;
     }
-
+    
     .dropdown-content a {
         padding: 10px 20px;
         text-align: center;
@@ -696,120 +696,252 @@ body {
     }
 }
 
-/* Why Choose Us Section */
-.why-choose-us-section {
+/* FAQ Section */
+.faq-section {
     padding: 80px 0;
     background-color: #000000;
     position: relative;
 }
 
-.why-choose-us-section::before {
+.faq-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./assets/pattern-bg.png');
-    background-size: 200px;
-    background-repeat: repeat;
-    opacity: 0.05;
+    background: linear-gradient(135deg, rgba(237, 197, 104, 0.03) 0%, rgba(194, 155, 60, 0.03) 100%);
     z-index: 1;
 }
 
-.why-choose-container {
-    max-width: 1000px; /* Reduced from 1400px since we don't have an image */
+.faq-container {
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
     z-index: 2;
 }
 
-.section-header {
+.faq-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
-.section-header h2 {
-    font-size: 36px;
+.faq-header h2 {
+    font-size: 42px;
     color: #FFFFFF;
-    margin-bottom: 15px;
-    font-weight: 600;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-.section-underline {
+.faq-underline {
     width: 80px;
-    height: 3px;
-    background-color: #FFB800;
+    height: 4px;
+    background: linear-gradient(90deg, #EDC568 0%, #C29B3C 100%);
+    margin: 0 auto 25px;
+    border-radius: 2px;
+}
+
+.faq-header p {
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 1.6;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-.choose-us-content {
+.faq-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.choose-us-points {
-    width: 100%;
+.faq-item {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(237, 197, 104, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.large-benefits {
-    margin: 0;
+.faq-item:hover {
+    border-color: rgba(237, 197, 104, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(237, 197, 104, 0.1);
 }
 
-.large-benefits li {
-    margin-bottom: 20px;
+.faq-item.active {
+    border-color: rgba(237, 197, 104, 0.4);
+    background: rgba(237, 197, 104, 0.05);
+}
+
+.faq-question {
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.faq-question:hover {
+    background: rgba(237, 197, 104, 0.05);
+}
+
+.faq-question h3 {
     font-size: 18px;
-    padding-left: 35px;
-    color: #CCCCCC;
-}
-
-.large-benefits li:before {
-    font-size: 20px;
-    color: #FFB800;
-    top: 3px;
-}
-
-.large-benefits li b {
     color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    flex: 1;
+    padding-right: 20px;
 }
 
-/* Media Queries for Why Choose Us Section */
+.faq-icon {
+    color: #EDC568;
+    font-size: 16px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.faq-answer p {
+    padding: 0 30px 25px;
+    margin: 0;
+    color: #CCCCCC;
+    font-size: 16px;
+    line-height: 1.6;
+    animation: fadeInContent 0.5s ease-in-out;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FAQ Media Queries */
 @media (max-width: 1200px) {
-    .why-choose-us-section {
+    .faq-section {
         padding: 70px 0;
     }
     
-    .section-header h2 {
-        font-size: 32px;
+    .faq-container {
+        padding: 0 30px;
     }
     
-    .large-benefits li {
+    .faq-header h2 {
+        font-size: 36px;
+    }
+    
+    .faq-header p {
         font-size: 16px;
+    }
+    
+    .faq-question {
+        padding: 22px 25px;
+    }
+    
+    .faq-question h3 {
+        font-size: 17px;
+    }
+    
+    .faq-answer p {
+        padding: 0 25px 22px;
+        font-size: 15px;
     }
 }
 
 @media (max-width: 768px) {
-    .why-choose-us-section {
+    .faq-section {
         padding: 60px 0;
     }
     
-    .why-choose-container {
+    .faq-container {
         padding: 0 20px;
     }
     
-    .section-header h2 {
-        font-size: 28px;
+    .faq-header {
+        margin-bottom: 40px;
     }
     
-    .large-benefits li {
-        font-size: 15px;
-        padding-left: 30px;
+    .faq-header h2 {
+        font-size: 32px;
         margin-bottom: 15px;
     }
     
-    .large-benefits li:before {
-        font-size: 18px;
+    .faq-header p {
+        font-size: 15px;
+    }
+    
+    .faq-content {
+        gap: 15px;
+    }
+    
+    .faq-question {
+        padding: 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 16px;
+        padding-right: 15px;
+    }
+    
+    .faq-icon {
+        font-size: 14px;
+    }
+    
+    .faq-answer p {
+        padding: 0 20px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 50px 0;
+    }
+    
+    .faq-container {
+        padding: 0 15px;
+    }
+    
+    .faq-header h2 {
+        font-size: 28px;
+    }
+    
+    .faq-header p {
+        font-size: 14px;
+    }
+    
+    .faq-question {
+        padding: 18px 15px;
+    }
+    
+    .faq-question h3 {
+        font-size: 15px;
+        padding-right: 10px;
+    }
+    
+    .faq-answer p {
+        padding: 0 15px 18px;
+        font-size: 13px;
     }
 }
 
