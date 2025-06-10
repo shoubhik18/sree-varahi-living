@@ -208,10 +208,10 @@ body {
     box-shadow: 0 4px 12px rgba(237, 197, 104, 0.3);
 }
 
-/* Footer Styles */
+/* Footer Styles - Updated with dark theme */
 .main-footer {
-    background-color: #C29B3C;
-    color: black;
+    background-color: #1a1a1a;
+    color: white;
     font-weight: 600;
     width: 100%;
     margin-top: 0;
@@ -234,15 +234,30 @@ body {
 }
 
 .footer-nav a {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.footer-nav a:hover {
+    background: linear-gradient(135deg, #FFD700, #B08D57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(5px);
 }
 
 .footer-logo img {
     max-width: 180px;
+    transition: all 0.3s ease;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
 .footer-contact {
@@ -253,11 +268,20 @@ body {
 }
 
 .contact-item a {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    background: linear-gradient(135deg, #FFD700, #B08D57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(-5px);
 }
 
 .social-icons {
@@ -267,13 +291,24 @@ body {
 }
 
 .social-icon {
-    color: black;
+    color: white;
     font-size: 22px;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.social-icon:hover {
+    color: #FFD700;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(176, 141, 87, 0.2));
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .footer-info {
@@ -282,7 +317,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
-    color: black;
+    color: white;
     font-size: 14px;
 }
 

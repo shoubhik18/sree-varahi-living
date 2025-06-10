@@ -280,7 +280,7 @@ body {
 .products-hero {
     width: 100%;
     height: 400px;
-    background-image: url('./assets/tenant-management-banner.png');
+    background-image: url('./assets/service.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -332,15 +332,32 @@ body {
 
 .service-card {
     flex: 0 0 calc(16.66% - 20px);
-    background-color: #1A1A1A;
+    background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
     color: #FFFFFF;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 20px;
+    padding: 25px 20px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.3), 0 2px 8px rgba(255,215,0,0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     margin-bottom: 20px;
     cursor: pointer;
+    border: 2px solid rgba(255,215,0,0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #FFD700, #B08D57);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .service-card a {
@@ -350,12 +367,24 @@ body {
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(255,215,0,0.25), 0 5px 15px rgba(0,0,0,0.4);
+    border-color: #FFD700;
+}
+
+.service-card:hover::before {
+    opacity: 0.15;
 }
 
 .service-card.active {
-    border-bottom: 3px solid #FFF;
-    position: relative;
+    background: linear-gradient(135deg, #FFD700, #B08D57);
+    border-color: #FFD700;
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 25px 60px rgba(255,215,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.service-card.active::before {
+    opacity: 0.3;
 }
 
 .service-card.active::after {
@@ -368,19 +397,49 @@ body {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid #FFF;
+    border-top: 10px solid #FFD700;
 }
 
-.service-card img {
-    width: 60px;
-    height: 60px;
+.service-card i {
+    font-size: 80px;
     margin-bottom: 15px;
+    color: #FFFFFF;
+    filter: brightness(0) saturate(100%) invert(100%);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.2);
+    display: block;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    z-index: 2;
+    position: relative;
+}
+
+.service-card:hover i {
+    filter: brightness(0) saturate(100%) invert(77%) sepia(58%) saturate(348%) hue-rotate(12deg) brightness(101%) contrast(101%);
+    transform: scale(1.1);
+    text-shadow: 0 4px 12px rgba(255,215,0,0.4);
+}
+
+.service-card.active i {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+    color: #000000;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .service-card h3 {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: #FFFFFF;
+    z-index: 2;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+.service-card.active h3 {
+    color: #000000;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Real Estate Section */
@@ -1149,10 +1208,10 @@ body {
     }
 }
 
-/* Footer Styles - Completely revised */
+/* Footer Styles - Updated with dark theme */
 .main-footer {
-    background-color: #C29B3C;
-    color: black;
+    background-color: #1a1a1a;
+    color: white;
     font-weight: 600;
     width: 100%;
     margin-top: 0;
@@ -1175,15 +1234,30 @@ body {
 }
 
 .footer-nav a {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.footer-nav a:hover {
+    background: linear-gradient(135deg, #FFD700, #B08D57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(5px);
 }
 
 .footer-logo img {
     max-width: 180px;
+    transition: all 0.3s ease;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
 }
 
 .footer-contact {
@@ -1194,11 +1268,20 @@ body {
 }
 
 .contact-item a {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    background: linear-gradient(135deg, #FFD700, #B08D57);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateX(-5px);
 }
 
 .social-icons {
@@ -1208,13 +1291,24 @@ body {
 }
 
 .social-icon {
-    color: black;
+    color: white;
     font-size: 22px;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.social-icon:hover {
+    color: #FFD700;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(176, 141, 87, 0.2));
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .footer-info {
@@ -1223,7 +1317,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0 40px;
-    color: black;
+    color: white;
     font-size: 14px;
 }
 
