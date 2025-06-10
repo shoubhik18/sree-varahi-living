@@ -23,9 +23,9 @@
                   <i class="fas fa-chevron-down arrow-icon"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="./plan-a.html">Plan A</a>
-                  <a href="./plan-b.html">Plan B</a>
-                  <a href="./plan-c.html">Plan C</a>
+                  <a href="./plan-a.html">Wealth Shield</a>
+                  <a href="./plan-b.html">Balanced Horizon</a>
+                  <a href="./plan-c.html">Growth Catalyst</a>
                 </div>
               </div>
               <a href="../sip-calculator.html">SIP Calculator</a>
@@ -47,7 +47,7 @@
     <main class="plan-content">
         <section class="plan-details">
             <div class="plan-overview">
-                <h2>Balanced Horizon <span class="plan-subtitle">(Moderate Risk – Growth with Stability)</span></h2>
+                <h2>Balanced Horizon <br> <span class="plan-subtitle">(Moderate Risk – Growth with Stability)</span></h2>
                 <div class="ideal-for-section">
                     <h3>Ideal for:</h3>
                     <p>Professionals or families aiming for better-than-average returns with manageable risk.</p>
@@ -144,6 +144,52 @@
         </div>
     </footer>
 
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="book-visit-form">
+          <h3>Contact Us</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Full Name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="mobileNumber">Mobile Number</label>
+              <input
+                type="tel"
+                id="mobileNumber"
+                name="mobileNumber"
+                placeholder="Mobile Number"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input
+                type="email"
+                id="emailAddress"
+                name="emailAddress"
+                placeholder="Email Address"
+                required
+              />
+            </div>
+
+            <button type="submit" class="submit-btn">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script>
         // Dropdown functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -212,8 +258,54 @@
                     navRight.classList.remove('active');
                     document.body.style.overflow = 'auto';
                 }
-            });
-        });
+                    });
+      });
+
+      // Modal functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("contactModal");
+        const contactBtn = document.querySelector(".contact-btn");
+        const investNowBtn = document.querySelector(".invest-now-btn");
+        const span = document.getElementsByClassName("close-modal")[0];
+
+        // Function to open modal
+        function openModal() {
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+
+        // Function to close modal
+        function closeModal() {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Restore scrolling
+        }
+
+        // Contact Us button functionality
+        if (contactBtn) {
+          contactBtn.onclick = function () {
+            openModal();
+          };
+        }
+
+        // Invest Now button functionality
+        if (investNowBtn) {
+          investNowBtn.onclick = function () {
+            openModal();
+          };
+        }
+
+        // Close modal when clicking X
+        span.onclick = function () {
+          closeModal();
+        };
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            closeModal();
+          }
+        };
+      });
     </script>
-</body>
+  </body>
 </html>

@@ -1235,7 +1235,7 @@ body {
 
 .team-card h3 {
     color: #FFFFFF;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 10px;
 }
 
@@ -1248,8 +1248,8 @@ body {
 
 .team-card .description {
     color: #FFFFFF;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 1.4;
 }
 
 /* Media Queries for Team Section */
