@@ -50,6 +50,77 @@ body {
     background-color: transparent;
     z-index: 1000;
     position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Sticky header states */
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 15px 120px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(237, 197, 104, 0.2);
+}
+
+.navbar.sticky-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.navbar.sticky-visible {
+    transform: translateY(0);
+    opacity: 1;
+    animation: slideDownFade 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth slide down animation */
+@keyframes slideDownFade {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Logo scaling in sticky mode */
+.navbar.sticky .logo img {
+    height: 4vh;
+    transition: height 0.3s ease;
+}
+
+/* Responsive sticky header */
+@media (max-width: 1200px) {
+    .navbar.sticky {
+        padding: 12px 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar.sticky {
+        padding: 12px 20px;
+    }
+    
+    .navbar.sticky .logo img {
+        height: 3.5vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar.sticky {
+        padding: 10px 20px;
+    }
+    
+    .navbar.sticky .logo img {
+        height: 3vh;
+    }
 }
 
 .nav-container {
@@ -182,13 +253,25 @@ body {
     font-weight: 300;
     line-height: 1.2;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.hero-content h1 span {
-    font-size: 5rem;
+.hero-line {
+    display: block;
+    white-space: nowrap;
+}
+
+.highlight-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.highlight-letter {
+    font-size: 1.25em;
     font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: 20px;
     background: linear-gradient(
         135deg,
         #FFD700 0%,
@@ -201,7 +284,7 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
-    display: inline-block;
+    display: inline;
     text-shadow: 
         0 0 5px rgba(255, 215, 0, 0.3),
         0 0 10px rgba(255, 215, 0, 0.2),
@@ -277,6 +360,22 @@ body {
     }
 }
 
+/* Tablet responsive styles */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3.2rem;
+        gap: 0.3rem;
+    }
+    
+    .hero-line {
+        text-align: center;
+    }
+    
+    .highlight-letter {
+        font-size: 1.2em;
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 20px 30px;
@@ -292,9 +391,23 @@ body {
     
     .hero-content h1 {
         font-size: 2.5rem;
+        gap: 0.2rem;
     }
-    .hero-content h1 span {
-        font-size: 3.5rem;
+    
+    .hero-line {
+        text-align: center;
+        display: block;
+        white-space: nowrap;
+        overflow: visible;
+    }
+    
+    .highlight-word {
+        display: inline-block;
+        white-space: nowrap;
+    }
+    
+    .highlight-letter {
+        font-size: 1.15em;
         background: linear-gradient(
             135deg,
             #FFD700 0%,
@@ -316,6 +429,37 @@ body {
     
     .background-video {
         min-height: 100vh;
+    }
+}
+
+/* Small mobile responsive styles */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+        gap: 0.1rem;
+    }
+    
+    .hero-line {
+        font-size: 0.95em;
+    }
+    
+    .highlight-letter {
+        font-size: 1.1em;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-line {
+        font-size: 0.9em;
+    }
+    
+    .highlight-letter {
+        font-size: 1.05em;
     }
 }
 
@@ -355,7 +499,7 @@ body {
 }
 
 .about-text p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     color: #FFFFFF;
     margin: 0;

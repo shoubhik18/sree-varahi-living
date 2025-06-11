@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Legal & Documentation - NEXFINR</title>
     <link rel="stylesheet" href="legal-and-documentation.css" />
+    <link rel="shortcut icon" href="./assets/favicon.jpg" type="image/x-icon">
     <script
       src="https://kit.fontawesome.com/376593105a.js"
       crossorigin="anonymous"
@@ -211,12 +212,12 @@
         </div>
 
         <div class="footer-logo">
-          <img src="./assets/trans_logo.png" alt="Logo" />
+          <img src="./assets/footer_logo.jpg" alt="Logo" />
         </div>
 
         <div class="footer-contact">
           <div class="contact-item">
-            <a href="tel:+919121211888">+91 8121811914</a>
+            <a href="tel:+918121811914">+91 8121811914</a>
           </div>
           <div class="contact-item">
             <a href="mailto:support@nexfinrealty.com">support@nexfinrealty.com</a>
@@ -442,6 +443,63 @@
           });
         });
       });
+    </script>
+
+    <!-- Premium Sticky Header Script -->
+    <script>
+        (function() {
+            const navbar = document.querySelector('.navbar');
+            let lastScrollTop = 0;
+            
+            // Throttle scroll events for better performance
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+            
+            function handleScroll() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const viewportHeight = window.innerHeight;
+                
+                // Only activate sticky behavior after scrolling past 100vh
+                if (scrollTop > viewportHeight) {
+                    if (!navbar.classList.contains('sticky')) {
+                        navbar.classList.add('sticky');
+                    }
+                    
+                    // Determine scroll direction
+                    if (scrollTop > lastScrollTop && scrollTop > viewportHeight + 100) {
+                        // Scrolling down - hide header
+                        navbar.classList.remove('sticky-visible');
+                        navbar.classList.add('sticky-hidden');
+                    } else {
+                        // Scrolling up - show header
+                        navbar.classList.remove('sticky-hidden');
+                        navbar.classList.add('sticky-visible');
+                    }
+                } else {
+                    // At top of page - remove all sticky classes
+                    navbar.classList.remove('sticky', 'sticky-hidden', 'sticky-visible');
+                }
+                
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+            }
+            
+            // Use throttled scroll listener for better performance
+            const throttledScroll = throttle(handleScroll, 16); // ~60fps
+            window.addEventListener('scroll', throttledScroll);
+            
+            // Handle resize events
+            window.addEventListener('resize', throttle(handleScroll, 100));
+        })();
     </script>
   </body>
 </html>

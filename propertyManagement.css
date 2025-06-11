@@ -19,6 +19,7 @@ body {
     background-color: transparent;
     z-index: 1000;
     position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .nav-container {
@@ -1422,5 +1423,88 @@ body {
     .modal .book-visit-form h3 {
         font-size: 20px;
         margin-bottom: 20px;
+    }
+}
+
+/* Premium Sticky Header Functionality */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 120px;
+    background-color: transparent;
+    z-index: 1000;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Sticky header states */
+.navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 15px 120px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(237, 197, 104, 0.2);
+}
+
+.navbar.sticky-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.navbar.sticky-visible {
+    transform: translateY(0);
+    opacity: 1;
+    animation: slideDownFade 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth slide down animation */
+@keyframes slideDownFade {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Logo scaling in sticky mode */
+.navbar.sticky .logo img {
+    height: 4vh;
+    transition: height 0.3s ease;
+}
+
+/* Responsive sticky header */
+@media (max-width: 1200px) {
+    .navbar.sticky {
+        padding: 12px 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar.sticky {
+        padding: 12px 20px;
+    }
+    
+    .navbar.sticky .logo img {
+        height: 3.5vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar.sticky {
+        padding: 10px 20px;
+    }
+    
+    .navbar.sticky .logo img {
+        height: 3vh;
     }
 } 
