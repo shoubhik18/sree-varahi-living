@@ -6,11 +6,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Roboto", serif;
     background-color: #000000;
     color: #FFFFFF;
     line-height: 1.6;
+    padding-top: 90px; /* Account for fixed navbar */
 }
 
 /* Navigation Styles */
@@ -19,10 +24,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 120px;
-    background-color: transparent;
+    padding: 15px 120px;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
 }
 
 .nav-container {

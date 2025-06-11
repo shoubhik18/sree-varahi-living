@@ -20,12 +20,14 @@
         <nav class="navbar">
           <div class="nav-container">
             <div class="logo">
+              <a href="./index.html">
               <img
                 height="100px"
                 width="100px"
-                src="./assets/trans_logo.png"
+                  src="./assets/trans_logo.png"
                 alt="NEXFINR Logo"
               />
+              </a>
             </div>
             <div class="nav-right">
               <div class="nav-links">
@@ -168,7 +170,7 @@
             <div class="feature-item price-item hidden-item">
               <span class="feature-label">Price</span>
               <button class="book-now-feature-btn">Book Now</button>
-            </div>
+          </div>
           </div>
           <div class="read-more-container">
             <button class="read-more-btn">Read More</button>
@@ -687,17 +689,17 @@
 
       <div class="partners-carousel-container">
         <div class="partners-carousel">
-          <div class="partner-logo">
-            <img src="./assets/HDFC-BANK.png" alt="HDFC Bank" />
-          </div>
-          <div class="partner-logo">
-            <img src="./assets/idfc.png" alt="IDFC Bank" />
-          </div>
-          <div class="partner-logo">
-            <img src="./assets/axis-bank.png" alt="Axis Bank" />
-          </div>
-          <div class="partner-logo">
-            <img src="./assets/sriram-properties.png" alt="Sriram Properties" />
+        <div class="partner-logo">
+          <img src="./assets/HDFC-BANK.png" alt="HDFC Bank" />
+        </div>
+        <div class="partner-logo">
+          <img src="./assets/idfc.png" alt="IDFC Bank" />
+        </div>
+        <div class="partner-logo">
+          <img src="./assets/axis-bank.png" alt="Axis Bank" />
+        </div>
+        <div class="partner-logo">
+          <img src="./assets/sriram-properties.png" alt="Sriram Properties" />
           </div>
           <div class="partner-logo">
             <img src="./assets/icici.jpg" alt="ICICI Bank" />
@@ -897,7 +899,7 @@
         function moveToNextProject() {
           const carouselWidth = carousel.scrollWidth;
           const containerWidth = carousel.parentElement.offsetWidth;
-          
+
           // Check if we can move to next project
           if (Math.abs(currentPosition) + containerWidth < carouselWidth) {
             currentPosition -= cardWidth;
@@ -952,7 +954,7 @@
         function moveToNextTestimonial() {
           const carouselWidth = testimonialCarousel.scrollWidth;
           const containerWidth = testimonialCarousel.parentElement.offsetWidth;
-          
+
           // Check if we can move to next testimonial
           if (Math.abs(testimonialPosition) + containerWidth < carouselWidth) {
             testimonialPosition -= testimonialWidth;
@@ -963,8 +965,8 @@
             currentTestimonialIndex = 0;
           }
           
-          testimonialCarousel.style.transform = `translateX(${testimonialPosition}px)`;
-        }
+            testimonialCarousel.style.transform = `translateX(${testimonialPosition}px)`;
+          }
 
         // Pause auto-scroll on hover
         testimonialCarousel.addEventListener("mouseenter", stopTestimonialAutoScroll);
