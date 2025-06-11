@@ -62,7 +62,7 @@ body {
 }
 
 .logo img {
-    height: 60px;
+    height: 5vh;
 }
 
 /* New right-side container for navigation and button */
@@ -995,20 +995,31 @@ body {
         padding: 60px 30px;
     }
     
-    .project-carousel {
-        flex-wrap: nowrap;
+    .project-carousel-container {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         padding-bottom: 20px;
+        width: 100%;
+    }
+    
+    .project-carousel {
+        flex-wrap: nowrap;
+        width: fit-content;
+        gap: 20px;
+        overflow: visible;
     }
     
     .project-card {
-        flex: 0 0 calc(100% - 30px);
+        flex: 0 0 280px;
+        min-width: 280px;
         scroll-snap-align: start;
+        margin-right: 20px;
     }
     
-
+    .project-card:last-child {
+        margin-right: 30px;
+    }
 }
 
 /* Testimonials Section */
@@ -1117,18 +1128,31 @@ body {
         padding: 60px 30px;
     }
     
-    .testimonials-carousel {
-        flex-wrap: nowrap;
+    .testimonials-container {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         padding-bottom: 20px;
+        width: 100%;
+    }
+    
+    .testimonials-carousel {
+        flex-wrap: nowrap;
+        width: fit-content;
+        gap: 20px;
+        overflow: visible;
     }
     
     .testimonial-card {
-        flex: 0 0 calc(100% - 30px);
+        flex: 0 0 300px;
+        min-width: 300px;
         scroll-snap-align: start;
         min-height: 300px;
+        margin-right: 20px;
+    }
+    
+    .testimonial-card:last-child {
+        margin-right: 30px;
     }
 }
 
@@ -1235,21 +1259,32 @@ body {
         padding: 50px 30px;
     }
     
-    .partners-carousel {
-        gap: 15px;
-        flex-wrap: nowrap;
+    .partners-carousel-container {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         padding-bottom: 20px;
+        width: 100%;
+    }
+    
+    .partners-carousel {
+        flex-wrap: nowrap;
+        width: fit-content;
+        gap: 15px;
+        overflow: visible;
     }
     
     .partner-logo {
-        flex: 0 0 calc(100% - 15px); /* Show 1 item at a time on mobile */
-        min-width: 140px;
+        flex: 0 0 200px;
+        min-width: 200px;
         padding: 12px 15px;
         min-height: 60px;
         scroll-snap-align: start;
+        margin-right: 15px;
+    }
+    
+    .partner-logo:last-child {
+        margin-right: 30px;
     }
     
     .partner-logo img {

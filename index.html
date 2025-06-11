@@ -22,8 +22,7 @@
             <div class="logo">
               <a href="./index.html">
               <img
-                height="100px"
-                width="100px"
+
                   src="./assets/trans_logo.png"
                 alt="NEXFINR Logo"
               />
@@ -842,10 +841,10 @@
 
         <div class="footer-contact">
           <div class="contact-item">
-            <a href="tel:+919121211888">+91-9121211888</a>
+            <a href="tel:+919121211888">+91 8121811914</a>
           </div>
           <div class="contact-item">
-            <a href="mailto:invest@ridhira.com">invest@nexfinrealty.com</a>
+            <a href="mailto:invest@ridhira.com">support@nexfinrealty.com</a>
           </div>
           <div class="contact-item">
             <a href="/privacy-policy">PRIVACY POLICY</a>
@@ -875,18 +874,23 @@
     </footer>
 
     <script>
-      // Project Carousel Auto-scroll functionality
+      // Function to check if device is mobile
+      function isMobileDevice() {
+        return window.innerWidth <= 768;
+      }
+
+      // Project Carousel functionality
       document.addEventListener("DOMContentLoaded", function () {
         const carousel = document.querySelector(".project-carousel");
         const projectCards = document.querySelectorAll(".project-card");
-        const cardWidth =
-          document.querySelector(".project-card").offsetWidth + 30; // Card width + gap
         let currentPosition = 0;
         let currentProjectIndex = 0;
         let projectAutoScrollInterval;
 
-        // Auto-scroll functionality for projects
+        // Auto-scroll functionality for projects (medium and above devices only)
         function startProjectAutoScroll() {
+          if (isMobileDevice()) return; // Don't start auto-scroll on mobile
+          
           projectAutoScrollInterval = setInterval(() => {
             moveToNextProject();
           }, 4000); // 4 seconds interval
@@ -897,6 +901,9 @@
         }
 
         function moveToNextProject() {
+          if (isMobileDevice()) return; // Don't auto-scroll on mobile
+          
+          const cardWidth = document.querySelector(".project-card").offsetWidth + 30;
           const carouselWidth = carousel.scrollWidth;
           const containerWidth = carousel.parentElement.offsetWidth;
 
@@ -913,9 +920,28 @@
           carousel.style.transform = `translateX(${currentPosition}px)`;
         }
 
-        // Pause auto-scroll on hover
-        carousel.addEventListener("mouseenter", stopProjectAutoScroll);
-        carousel.addEventListener("mouseleave", startProjectAutoScroll);
+        // Setup carousel based on device type
+        function setupProjectCarousel() {
+          if (isMobileDevice()) {
+            // Reset transform for mobile
+            carousel.style.transform = 'translateX(0)';
+            currentPosition = 0;
+            currentProjectIndex = 0;
+            stopProjectAutoScroll();
+            
+            // Remove hover listeners for mobile
+            carousel.removeEventListener("mouseenter", stopProjectAutoScroll);
+            carousel.removeEventListener("mouseleave", startProjectAutoScroll);
+          } else {
+            // Setup auto-scroll for medium and above devices
+            carousel.addEventListener("mouseenter", stopProjectAutoScroll);
+            carousel.addEventListener("mouseleave", startProjectAutoScroll);
+            startProjectAutoScroll();
+          }
+        }
+
+        // Initial setup
+        setupProjectCarousel();
 
         // Update on window resize
         window.addEventListener("resize", function () {
@@ -923,25 +949,20 @@
           currentProjectIndex = 0;
           carousel.style.transform = `translateX(0)`;
           stopProjectAutoScroll();
-          startProjectAutoScroll();
+          setupProjectCarousel();
         });
 
-        // Start auto-scroll when page loads
-        startProjectAutoScroll();
-
-        // Testimonial carousel auto-scroll functionality
-        const testimonialCarousel = document.querySelector(
-          ".testimonials-carousel"
-        );
+        // Testimonial carousel functionality
+        const testimonialCarousel = document.querySelector(".testimonials-carousel");
         const testimonialCards = document.querySelectorAll(".testimonial-card");
-        const testimonialWidth =
-          document.querySelector(".testimonial-card").offsetWidth + 30; // Card width + gap
         let testimonialPosition = 0;
         let currentTestimonialIndex = 0;
         let testimonialAutoScrollInterval;
 
-        // Auto-scroll functionality for testimonials
+        // Auto-scroll functionality for testimonials (medium and above devices only)
         function startTestimonialAutoScroll() {
+          if (isMobileDevice()) return; // Don't start auto-scroll on mobile
+          
           testimonialAutoScrollInterval = setInterval(() => {
             moveToNextTestimonial();
           }, 4000); // 4 seconds interval
@@ -952,6 +973,9 @@
         }
 
         function moveToNextTestimonial() {
+          if (isMobileDevice()) return; // Don't auto-scroll on mobile
+          
+          const testimonialWidth = document.querySelector(".testimonial-card").offsetWidth + 30;
           const carouselWidth = testimonialCarousel.scrollWidth;
           const containerWidth = testimonialCarousel.parentElement.offsetWidth;
 
@@ -965,35 +989,52 @@
             currentTestimonialIndex = 0;
           }
           
-            testimonialCarousel.style.transform = `translateX(${testimonialPosition}px)`;
+          testimonialCarousel.style.transform = `translateX(${testimonialPosition}px)`;
+        }
+
+        // Setup testimonial carousel based on device type
+        function setupTestimonialCarousel() {
+          if (isMobileDevice()) {
+            // Reset transform for mobile
+            testimonialCarousel.style.transform = 'translateX(0)';
+            testimonialPosition = 0;
+            currentTestimonialIndex = 0;
+            stopTestimonialAutoScroll();
+            
+            // Remove hover listeners for mobile
+            testimonialCarousel.removeEventListener("mouseenter", stopTestimonialAutoScroll);
+            testimonialCarousel.removeEventListener("mouseleave", startTestimonialAutoScroll);
+          } else {
+            // Setup auto-scroll for medium and above devices
+            testimonialCarousel.addEventListener("mouseenter", stopTestimonialAutoScroll);
+            testimonialCarousel.addEventListener("mouseleave", startTestimonialAutoScroll);
+            startTestimonialAutoScroll();
           }
+        }
 
-        // Pause auto-scroll on hover
-        testimonialCarousel.addEventListener("mouseenter", stopTestimonialAutoScroll);
-        testimonialCarousel.addEventListener("mouseleave", startTestimonialAutoScroll);
+        // Initial setup for testimonials
+        setupTestimonialCarousel();
 
-        // Reset testimonial position on window resize
+        // Reset testimonial on window resize
         window.addEventListener("resize", function () {
           testimonialPosition = 0;
           currentTestimonialIndex = 0;
           testimonialCarousel.style.transform = `translateX(0)`;
           stopTestimonialAutoScroll();
-          startTestimonialAutoScroll();
+          setupTestimonialCarousel();
         });
 
-        // Start auto-scroll when page loads
-        startTestimonialAutoScroll();
-
-        // Partners carousel auto-scroll functionality
+        // Partners carousel functionality
         const partnersCarousel = document.querySelector(".partners-carousel");
         const partnerLogos = document.querySelectorAll(".partner-logo");
-        const partnerWidth = document.querySelector(".partner-logo").offsetWidth + 30; // Logo width + gap
         let partnersPosition = 0;
         let currentPartnerIndex = 0;
         let partnersAutoScrollInterval;
 
-        // Auto-scroll functionality for partners
+        // Auto-scroll functionality for partners (medium and above devices only)
         function startPartnersAutoScroll() {
+          if (isMobileDevice()) return; // Don't start auto-scroll on mobile
+          
           partnersAutoScrollInterval = setInterval(() => {
             moveToNextPartner();
           }, 4000); // 4 seconds interval
@@ -1004,13 +1045,13 @@
         }
 
         function moveToNextPartner() {
+          if (isMobileDevice()) return; // Don't auto-scroll on mobile
+          
           // Determine how many items to show based on screen size
           const screenWidth = window.innerWidth;
           let itemsToShow;
           
-          if (screenWidth <= 768) {
-            itemsToShow = 1; // Show 1 on mobile
-          } else if (screenWidth <= 992) {
+          if (screenWidth <= 992) {
             itemsToShow = 2; // Show 2 on tablet
           } else {
             itemsToShow = 4; // Show 4 on desktop
@@ -1029,28 +1070,43 @@
           // Calculate position based on item width and current index
           const logoElement = document.querySelector(".partner-logo");
           const logoWidth = logoElement.offsetWidth;
-          const gap = 30; // Default gap
-          const gapAdjusted = screenWidth <= 768 ? 15 : (screenWidth <= 992 ? 20 : 30);
+          const gapAdjusted = screenWidth <= 992 ? 20 : 30;
           
           partnersPosition = -(currentPartnerIndex * (logoWidth + gapAdjusted));
           partnersCarousel.style.transform = `translateX(${partnersPosition}px)`;
         }
 
-        // Pause auto-scroll on hover
-        partnersCarousel.addEventListener("mouseenter", stopPartnersAutoScroll);
-        partnersCarousel.addEventListener("mouseleave", startPartnersAutoScroll);
+        // Setup partners carousel based on device type
+        function setupPartnersCarousel() {
+          if (isMobileDevice()) {
+            // Reset transform for mobile
+            partnersCarousel.style.transform = 'translateX(0)';
+            partnersPosition = 0;
+            currentPartnerIndex = 0;
+            stopPartnersAutoScroll();
+            
+            // Remove hover listeners for mobile
+            partnersCarousel.removeEventListener("mouseenter", stopPartnersAutoScroll);
+            partnersCarousel.removeEventListener("mouseleave", startPartnersAutoScroll);
+          } else {
+            // Setup auto-scroll for medium and above devices
+            partnersCarousel.addEventListener("mouseenter", stopPartnersAutoScroll);
+            partnersCarousel.addEventListener("mouseleave", startPartnersAutoScroll);
+            startPartnersAutoScroll();
+          }
+        }
 
-        // Reset partners position on window resize
+        // Initial setup for partners
+        setupPartnersCarousel();
+
+        // Reset partners on window resize
         window.addEventListener("resize", function () {
           partnersPosition = 0;
           currentPartnerIndex = 0;
           partnersCarousel.style.transform = `translateX(0)`;
           stopPartnersAutoScroll();
-          startPartnersAutoScroll();
+          setupPartnersCarousel();
         });
-
-        // Start partners auto-scroll when page loads
-        startPartnersAutoScroll();
       });
 
       // Features Carousel functionality
