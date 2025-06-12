@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 body {
-    font-family: "Roboto", serif;
+    font-family: "Poppins", sans-serif;
     background-color: #000000;
 }
 
@@ -153,8 +154,8 @@ body {
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  margin: 0 20px;
-  font-size: 16px;
+  /* margin: 0 10px; */
+  font-size: 14px;
   font-weight: 500;
   position: relative;
   transition: all 0.3s ease;
@@ -262,6 +263,11 @@ body {
 .hero-line {
     display: block;
     white-space: nowrap;
+}
+
+/* Special styling for the "New Exclusive Xperience" line */
+.hero-line-nexperience {
+    white-space: nowrap; /* Keep on one line for medium+ screens */
 }
 
 .highlight-word {
@@ -401,6 +407,12 @@ body {
         overflow: visible;
     }
     
+    /* Allow the "New Exclusive Xperience" line to break on mobile */
+    .hero-line-nexperience {
+        white-space: normal; /* Allow line breaks on mobile */
+        word-spacing: 0.2em; /* Add some spacing between words */
+    }
+    
     .highlight-word {
         display: inline-block;
         white-space: nowrap;
@@ -443,6 +455,13 @@ body {
         font-size: 0.95em;
     }
     
+    /* Ensure proper spacing on small mobile */
+    .hero-line-nexperience {
+        white-space: normal;
+        word-spacing: 0.15em;
+        line-height: 1.3;
+    }
+    
     .highlight-letter {
         font-size: 1.1em;
     }
@@ -456,6 +475,13 @@ body {
     
     .hero-line {
         font-size: 0.9em;
+    }
+    
+    /* Tighter spacing for very small screens */
+    .hero-line-nexperience {
+        white-space: normal;
+        word-spacing: 0.1em;
+        line-height: 1.2;
     }
     
     .highlight-letter {
