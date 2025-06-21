@@ -1,17 +1,44 @@
 /* Import base styles from index.css */
 @import url('./index.css');
 
+/* Dropdown Styles Override for SIP Calculator */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* CSS-only hover support as fallback */
+.dropdown-container:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-container:hover .dropdown-button {
+    color: #EDC568;
+    background: rgba(237, 197, 104, 0.15);
+}
+
+.dropdown-container:hover .dropdown-button::before {
+    width: 100%;
+}
+
+.dropdown-container:hover .dropdown-button .arrow-icon {
+    transform: rotate(-180deg);
+}
+
 /* SIP Calculator Main Styles */
 .sip-calculator-main {
     background-color: #000000;
     min-height: 100vh;
-    padding: 120px 0 0 0; /* Account for fixed header */
+    /* padding: 120px 0 0 0; Account for fixed header */
 }
 
 .sip-calculator-section {
     padding: 80px 20px;
     background-color: #000000;
-    min-height: calc(100vh - 120px);
+    /* min-height: calc(100vh - 120px); */
 }
 
 .calculator-container {

@@ -25,7 +25,7 @@
               <a href="./index.html">HOME</a>
               <div class="dropdown-container">
                 <button class="dropdown-button">
-                  OUR PORTFOLIO
+                  PORTFOLIO
                   <i class="fas fa-chevron-down arrow-icon"></i>
                 </button>
                 <div class="dropdown-content">
@@ -38,7 +38,7 @@
                   >
                 </div>
               </div>
-              <a href="./sip-calculator.html">SIP CALCULATOR</a>
+              <a href="./sip-calculator.html">CALCULATOR</a>
               <a href="./propertManagement.html">SERVICES</a>
               <!-- <a href="#find-a-property">Find A Property</a> -->
               <a href="./about-us.html">ABOUT US</a>
@@ -147,8 +147,8 @@
           <div class="why-choose-content">
             <ul class="feature-list">
               <li>
-                <strong>Curated Property Access</strong> - From Every asset is
-                handpicked for quality, security, and investment value.
+                <strong>Curated Property Access</strong> - Every asset is
+                meticulously selected for its quality, security, and long-term investment potential.
               </li>
               <li>
                 <strong>Expert Property Management</strong> - From documentation
@@ -421,7 +421,7 @@
                 <div class="team-name-position">
                   <h3>DEVENDER REDDY</h3>
                   <p class="position">HEAD OF MARKETING & OPERATIONS</p>
-                  <p class="previous-company">Ex-Godrej</p>
+                  <p class="previous-company">Ex-Ninjacart</p>
                 </div>
                 <a
                   href="https://www.linkedin.com/in/devendar-b-57334a159?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
@@ -525,7 +525,7 @@
                 <div class="team-name-position">
                   <h3>MARY P</h3>
                   <p class="position">SR. FINANCIAL ANALYST</p>
-                  <p class="previous-company">Ex-HSBC</p>
+                  <p class="previous-company">Ex-Wells Fargo</p>
                 </div>
                 <a
                   href="https://www.linkedin.com/in/mary-peddi-98b165170/"
@@ -621,8 +621,8 @@
       <div class="footer-main">
         <div class="footer-nav">
           <a href="./index.html">HOME</a>
-          <a href="./portfolio-management/plan-a.html">OUR PORTFOLIO</a>
-          <a href="./sip-calculator.html">SIP CALCULATOR</a>
+          <a href="./portfolio-management/plan-a.html">PORTFOLIO</a>
+          <a href="./sip-calculator.html">CALCULATOR</a>
           <a href="./propertManagement.html">SERVICES</a>
           <a href="./about-us.html">ABOUT US</a>
         </div>
@@ -668,39 +668,53 @@
     </footer>
 
     <script>
-      // Dropdown functionality
+      // Dropdown functionality - Hover based
       document.addEventListener("DOMContentLoaded", function () {
+        const dropdownContainer = document.querySelector(".dropdown-container");
         const dropdownButton = document.querySelector(".dropdown-button");
         const dropdownContent = document.querySelector(".dropdown-content");
-        let isDropdownOpen = false;
+        let hoverTimeout;
 
-        dropdownButton.addEventListener("click", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          isDropdownOpen = !isDropdownOpen;
-          this.classList.toggle("active");
-          dropdownContent.classList.toggle("show");
-        });
+        // Show dropdown on hover
+        function showDropdown() {
+          clearTimeout(hoverTimeout);
+          dropdownButton.classList.add("active");
+          dropdownContent.classList.add("show");
+        }
 
-        document.addEventListener("click", function (e) {
-          if (!dropdownButton.contains(e.target) && isDropdownOpen) {
-            isDropdownOpen = false;
+        // Hide dropdown with delay
+        function hideDropdown() {
+          hoverTimeout = setTimeout(() => {
             dropdownButton.classList.remove("active");
             dropdownContent.classList.remove("show");
-          }
-        });
+          }, 150); // Small delay to allow moving to dropdown content
+        }
 
+        // Mouse events for dropdown button
+        dropdownButton.addEventListener("mouseenter", showDropdown);
+        dropdownButton.addEventListener("mouseleave", hideDropdown);
+
+        // Mouse events for dropdown content
+        dropdownContent.addEventListener("mouseenter", showDropdown);
+        dropdownContent.addEventListener("mouseleave", hideDropdown);
+
+        // Mouse events for entire dropdown container
+        dropdownContainer.addEventListener("mouseenter", showDropdown);
+        dropdownContainer.addEventListener("mouseleave", hideDropdown);
+
+        // Handle dropdown links - close on click for navigation
         dropdownContent.querySelectorAll("a").forEach((link) => {
           link.addEventListener("click", () => {
-            isDropdownOpen = false;
+            clearTimeout(hoverTimeout);
             dropdownButton.classList.remove("active");
             dropdownContent.classList.remove("show");
           });
         });
 
+        // Close dropdown when pressing Escape key
         document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && isDropdownOpen) {
-            isDropdownOpen = false;
+          if (e.key === "Escape") {
+            clearTimeout(hoverTimeout);
             dropdownButton.classList.remove("active");
             dropdownContent.classList.remove("show");
           }

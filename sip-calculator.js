@@ -1,4 +1,4 @@
-// SIP Calculator JavaScript
+// CALCULATOR JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // Get all input elements
@@ -243,39 +243,50 @@ document.addEventListener('DOMContentLoaded', function() {
     // Calculate button click handler
     calculateBtn.addEventListener('click', calculateSIP);
 
-    // Dropdown functionality (copied from index.html)
+    // Dropdown functionality - HOVER BASED (matching index.html)
+    const dropdownContainer = document.querySelector('.dropdown-container');
     const dropdownButton = document.querySelector('.dropdown-button');
     const dropdownContent = document.querySelector('.dropdown-content');
-    let isDropdownOpen = false;
+    let hoverTimeout;
 
-    if (dropdownButton && dropdownContent) {
-        dropdownButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            isDropdownOpen = !isDropdownOpen;
-            this.classList.toggle('active');
-            dropdownContent.classList.toggle('show');
+    if (dropdownContainer && dropdownButton && dropdownContent) {
+        // Add hover functionality to the entire dropdown container
+        dropdownContainer.addEventListener('mouseenter', function() {
+            clearTimeout(hoverTimeout);
+            dropdownButton.classList.add('active');
+            dropdownContent.classList.add('show');
         });
 
-        document.addEventListener('click', function(e) {
-            if (!dropdownButton.contains(e.target) && isDropdownOpen) {
-                isDropdownOpen = false;
+        dropdownContainer.addEventListener('mouseleave', function() {
+            hoverTimeout = setTimeout(() => {
                 dropdownButton.classList.remove('active');
                 dropdownContent.classList.remove('show');
-            }
+            }, 150);
         });
 
+        // Prevent dropdown from closing when hovering over button
+        dropdownButton.addEventListener('mouseenter', function() {
+            clearTimeout(hoverTimeout);
+        });
+
+        // Prevent dropdown from closing when hovering over content
+        dropdownContent.addEventListener('mouseenter', function() {
+            clearTimeout(hoverTimeout);
+        });
+
+        // Handle dropdown links - close on click for navigation
         dropdownContent.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                isDropdownOpen = false;
+                clearTimeout(hoverTimeout);
                 dropdownButton.classList.remove('active');
                 dropdownContent.classList.remove('show');
             });
         });
 
+        // Close dropdown when pressing Escape key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isDropdownOpen) {
-                isDropdownOpen = false;
+            if (e.key === 'Escape') {
+                clearTimeout(hoverTimeout);
                 dropdownButton.classList.remove('active');
                 dropdownContent.classList.remove('show');
             }

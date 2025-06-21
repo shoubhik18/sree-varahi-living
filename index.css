@@ -549,21 +549,49 @@ body {
 .read-more-btn {
     display: inline-block;
     padding: 12px 32px;
-    background-color: #EDC568;
-    color: #000000;
+    background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-size: 200% 200%;
+    color: #2c2c2c;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
+    border-radius: 50px;
+    font-weight: 700;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
     margin-top: 16px;
     align-self: flex-start;
+    box-shadow: 0 4px 15px rgba(191, 149, 63, 0.3);
+    text-transform: uppercase;
+    border: none;
+}
+
+.read-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
 }
 
 .read-more-btn:hover {
-    background-color: #FFFFFF;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(237, 197, 104, 0.3);
+    background-position: right center;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(191, 149, 63, 0.4);
+    animation: shimmer 2s infinite;
+}
+
+.read-more-btn:hover::before {
+    left: 100%;
+}
+
+.read-more-btn:active {
+    transform: translateY(0) scale(1.02);
 }
 
 @media (max-width: 1200px) {
@@ -1100,24 +1128,47 @@ body {
 }
 
 .book-now-btn {
-    background: linear-gradient(135deg, #FFD700, #B08D57);
-    color: #000000;
+    background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-size: 200% 200%;
+    color: #2c2c2c;
     border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
     font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(255,215,0,0.3);
-    text-transform: uppercase;
     letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(191, 149, 63, 0.3);
+    text-transform: uppercase;
+}
+
+.book-now-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
 }
 
 .book-now-btn:hover {
-    background: linear-gradient(135deg, #B08D57, #FFD700);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+    background-position: right center;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(191, 149, 63, 0.4);
+    animation: shimmer 2s infinite;
+}
+
+.book-now-btn:hover::before {
+    left: 100%;
+}
+
+.book-now-btn:active {
+    transform: translateY(0) scale(1.02);
 }
 
 /* Media Queries for Featured Property */
@@ -1922,6 +1973,27 @@ body {
     display: inline-block;
 }
 
+/* CSS-only hover support as fallback */
+.dropdown-container:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-container:hover .dropdown-button {
+    color: #EDC568;
+    background: rgba(237, 197, 104, 0.15);
+}
+
+.dropdown-container:hover .dropdown-button::before {
+    width: 100%;
+}
+
+.dropdown-container:hover .dropdown-button .arrow-icon {
+    transform: rotate(-180deg);
+}
+
 /* Dropdown button premium styling */
 .dropdown-button {
   background: none;
@@ -2221,7 +2293,7 @@ body {
 .subscriptions-row {
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
@@ -2233,6 +2305,7 @@ body {
     background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
     border-radius: 20px;
     min-height: auto;
+    height: fit-content;
     box-shadow: 0 10px 35px rgba(0,0,0,0.3), 0 2px 8px rgba(255,215,0,0.1);
     display: flex;
     flex-direction: column;
@@ -2423,6 +2496,7 @@ body {
     
     .subscriptions-row {
         flex-direction: column;
+        align-items: center;
         max-width: 700px;
         gap: 30px;
         padding: 0 20px;
@@ -2435,7 +2509,7 @@ body {
         display: flex !important;
         flex-direction: column !important;
         min-height: auto !important;
-        height: auto !important;
+        height: fit-content !important;
     }
     
     .subscription-box:hover {
@@ -2554,7 +2628,7 @@ body {
         border: 2px solid rgba(255,215,0,0.2) !important;
         box-shadow: 0 10px 35px rgba(0,0,0,0.3), 0 2px 8px rgba(255,215,0,0.1) !important;
         min-height: auto !important;
-        height: auto !important;
+        height: fit-content !important;
         overflow: visible !important;
     }
     
@@ -3323,17 +3397,24 @@ body {
 
 /* Hidden items functionality */
 .hidden-item {
-    display: none !important;
+    display: flex !important;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscription-box.expanded .hidden-item {
-    display: flex !important;
     opacity: 1;
     max-height: 100px;
+    padding-top: 12px;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Read More Button */
@@ -3346,55 +3427,102 @@ body {
 }
 
 .read-more-btn {
-    background: linear-gradient(135deg, #FFD700, #B08D57);
-    color: #000000;
+    background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-size: 200% 200%;
+    color: #2c2c2c;
     border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 700;
     font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(255,215,0,0.3);
-    text-transform: uppercase;
     letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(191, 149, 63, 0.3);
+    text-transform: uppercase;
+}
+
+.read-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
 }
 
 .read-more-btn:hover {
-    background: linear-gradient(135deg, #B08D57, #FFD700);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+    background-position: right center;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(191, 149, 63, 0.4);
+    animation: shimmer 2s infinite;
+}
+
+.read-more-btn:hover::before {
+    left: 100%;
+}
+
+.read-more-btn:active {
+    transform: translateY(0) scale(1.02);
 }
 
 .read-more-btn.expanded {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    background: linear-gradient(45deg, #e74c3c, #c0392b, #e74c3c, #c0392b, #e74c3c);
+    background-size: 200% 200%;
     color: #FFFFFF;
 }
 
 .read-more-btn.expanded:hover {
-    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    background-position: right center;
+    animation: shimmer 2s infinite;
 }
-
 /* Book Now Feature Button */
 .book-now-feature-btn {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: #FFFFFF;
+    background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-size: 200% 200%;
+    color: #2c2c2c;
     border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
     font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(231, 76, 60, 0.3);
-    text-transform: uppercase;
     letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(191, 149, 63, 0.3);
+    text-transform: uppercase;
+}
+
+.book-now-feature-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
 }
 
 .book-now-feature-btn:hover {
-    background: linear-gradient(135deg, #c0392b, #e74c3c);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+    background-position: right center;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(191, 149, 63, 0.4);
+    animation: shimmer 2s infinite;
+}
+
+.book-now-feature-btn:hover::before {
+    left: 100%;
+}
+
+.book-now-feature-btn:active {
+    transform: translateY(0) scale(1.02);
 }
 
 .price-item .feature-value {
@@ -3424,3 +3552,4 @@ body {
         justify-content: flex-start;
     }
 }
+

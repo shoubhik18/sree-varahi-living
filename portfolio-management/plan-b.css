@@ -500,6 +500,27 @@ body {
     display: inline-block;
 }
 
+/* CSS-only hover support as fallback */
+.dropdown-container:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-container:hover .dropdown-button {
+    color: #EDC568;
+    background: rgba(237, 197, 104, 0.15);
+}
+
+.dropdown-container:hover .dropdown-button::before {
+    width: 100%;
+}
+
+.dropdown-container:hover .dropdown-button .arrow-icon {
+    transform: rotate(-180deg);
+}
+
 .dropdown-button {
     background: none;
     border: none;
